@@ -2,21 +2,21 @@
 <rss version="2.0">
     <channel>
         <title>Let&apos;s rule the bots!   Blog</title>
-        <link>spacehal.github.io/blog</link>
+        <link>spacehal.github.io//blog</link>
         <description>The best place to stay up-to-date with the latest Let&apos;s rule the bots!   news and events.</description>
         <lastBuildDate>Thu, 01 Aug 2019 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
             <title>Let&apos;s rule the bots!   Blog</title>
-            <url>spacehal.github.io/img/logosmallred.svg</url>
-            <link>spacehal.github.io/blog</link>
+            <url>spacehal.github.io//img/logosmallred.svg</url>
+            <link>spacehal.github.io//blog</link>
         </image>
         <copyright>Copyright © 2019 Stefan Warm</copyright>
         <item>
             <title><![CDATA[Willkommen]]></title>
-            <link>spacehal.github.io/blog/2019/08/01/Wellcome.html</link>
-            <guid>spacehal.github.io/blog/2019/08/01/Wellcome.html</guid>
+            <link>spacehal.github.io//blog/2019/08/01/Wellcome.html</link>
+            <guid>spacehal.github.io//blog/2019/08/01/Wellcome.html</guid>
             <pubDate>Thu, 01 Aug 2019 06:00:00 GMT</pubDate>
             <description><![CDATA[<p>Noch nicht perfekt und weit davon entfernt vollständig zu sein, aber trotzdem ...</p> <p>Die Seite <strong>&quot;Let's rule the bots!&quot;</strong> soll begleitendes Unterrichtsmaterial für den Robotik-Unterricht am OSZ TIEM in Berlin bieten. Der Kurs <em>Mobile Autonome Robot...</em></p>]]></description>
         </item>
