@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>1. &quot;Hallo Welt&quot; oder eine blinkende LED · Let&#x27;s rule the bots!  </title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Das erste Programm (in der Arduinowelt Sktech genannt) lässt eine LED, die mit einem Vorwiderstand verbunden ist, regelmäßig blinken. An diesem Programmbeispiel lernen Sie den Grundaufbau eines Arduino-Sketches kennen.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="1. &quot;Hallo Welt&quot; oder eine blinkende LED · Let&#x27;s rule the bots!  "/><meta property="og:type" content="website"/><meta property="og:url" content="spacehal.github.io/spacehal.github.io/"/><meta property="og:description" content="&lt;p&gt;Das erste Programm (in der Arduinowelt Sktech genannt) lässt eine LED, die mit einem Vorwiderstand verbunden ist, regelmäßig blinken. An diesem Programmbeispiel lernen Sie den Grundaufbau eines Arduino-Sketches kennen.&lt;/p&gt;
+"/><meta property="og:image" content="spacehal.github.io/spacehal.github.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="spacehal.github.io/spacehal.github.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="spacehal.github.io/img/logoSmallRed.svg"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/><link rel="alternate" type="application/atom+xml" href="spacehal.github.io/spacehal.github.io/blog/atom.xml" title="Let&#x27;s rule the bots!   Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="spacehal.github.io/spacehal.github.io/blog/feed.xml" title="Let&#x27;s rule the bots!   Blog RSS Feed"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="spacehal.github.io/js/scrollSpy.js"></script><link rel="stylesheet" href="spacehal.github.io/css/main.css"/><script src="spacehal.github.io/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="spacehal.github.io/"><img class="logo" src="spacehal.github.io/img/logosmallred.svg" alt="Let&#x27;s rule the bots!  "/><h2 class="headerTitleWithLogo">Let&#x27;s rule the bots!  </h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive siteNavItemActive"><a href="spacehal.github.io/docs/helloworld" target="_self">Arduino</a></li><li class=""><a href="spacehal.github.io/docs/zumoBasics" target="_self">Zumo</a></li><li class=""><a href="spacehal.github.io/docs/moreInfo" target="_self">More ...</a></li><li class=""><a href="spacehal.github.io/blog/" target="_self">Blog</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Grundlagen</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Grundlagen<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="spacehal.github.io/docs/helloworld">1. Hallo Welt</a></li><li class="navListItem"><a class="navItem" href="spacehal.github.io/docs/input">2. Eingaben</a></li><li class="navListItem"><a class="navItem" href="spacehal.github.io/docs/millis">3. Zeitkritische Aufgaben</a></li><li class="navListItem"><a class="navItem" href="spacehal.github.io/docs/seriell">4. Serielle Schnittstelle</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">1. &quot;Hallo Welt&quot; oder eine blinkende LED</h1></header><article><div><span><p>Das erste Programm (in der Arduinowelt Sktech genannt) lässt eine LED, die mit einem Vorwiderstand verbunden ist, regelmäßig blinken. An diesem Programmbeispiel lernen Sie den Grundaufbau eines Arduino-Sketches kennen.</p>
+<h2><a class="anchor" aria-hidden="true" id="einfache-schaltung-fur-eine-led"></a><a href="#einfache-schaltung-fur-eine-led" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Einfache Schaltung für eine LED</h2>
+<p>Bevor jedoch der Arduino programmiert werden kann, muss die LED mit einer entsprechenden Schaltung angeschlossen werden. Bei der Schaltung ist zu beachten, dass der lange Anschluss der LED der Plus-Pol und der kurze Anschluss der Minus-Pol ist. <strong>Wird die LED falsch angeschlossen, wird sie nicht leuchten.</strong> Außerdem gilt es zu beachten, dass der Strom durch die LED auf ca. 20 mA begrenzt wird. Ein größerer Strom könnte die LED zerstüren. Außerdem sollte die Ströme der einzelnen Arduino-Pins auf 20 mA begrenzt werden. Höhere Stromwerte können auch den Arduino zerstören. Zur Strombegrenzung wird ein Widerstand mit \( R=220\ \Omega \) verwendet. Die vollständige Schaltung ist unten abgebildet.</p>
+<blockquote>
+<p>Eine LED sollte niemals ohne Vorwiderstand an den Arduino angeschlossen werden! Dies könnte den Arduino und/oder die LED zerstören.</p>
+</blockquote>
+<p><img src="../img/breadBoardHelloWorld.svg" alt="drawing" width=100% height=auto/></p>
+<h2><a class="anchor" aria-hidden="true" id="bestimmung-des-vorwiderstandes"></a><a href="#bestimmung-des-vorwiderstandes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bestimmung des Vorwiderstandes</h2>
+<p>Warum wird aber ein Widerstand von \( R=220\ \Omega \) verwendet? Betrachtet man das Schaltbild oben rechts, so lässt sich folgende Masche aufstellen \( U_{D9} = U_R + U_D = I\cdot R + U_D \) und relativ einfach nach dem gesuchten Widerstand R umstellen: $$ R= \frac{U_{D9} - U_D}{I}= \frac{5\ V - 2\ V}{20\ mA} = 150\ \Omega &lt; 220\ \Omega$$</p>
+<h2><a class="anchor" aria-hidden="true" id="blink-programm"></a><a href="#blink-programm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Blink-Programm</h2>
+<div class="tabs"><div class="nav-tabs"><div id="tab-group-1-tab-2" class="nav-link active" data-group="group_1" data-tab="tab-group-1-content-2">Hallo_Welt.ino</div></div><div class="tab-content"><div id="tab-group-1-content-2" class="tab-pane active" data-group="group_1" tabindex="-1"><div><span><pre><code class="hljs css language-Arduino"><span class="hljs-comment">/* Die angeschlossene LED wird abwechselnd an- und ausgeschaltet.<br />Durch den Befehl delay() ergibt sich eine blinkende LED.*/</span><br /><br /><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> PIN_LED 9   <span class="hljs-comment">// im Programm wird PIN_LED mmer durch 9 ersetzt</span></span><br />                    <span class="hljs-comment">// #define definiert eine Platzhalter, keine Variable</span><br /><br /><span class="hljs-comment">// setup() wird nur einmal durchlaufen und konfiguriert das Board</span><br /><span class="hljs-keyword">void</span> <span class="hljs-built_in">setup</span>() {<br />  <span class="hljs-built_in">pinMode</span>(PIN_LED,<span class="hljs-literal">OUTPUT</span>); <span class="hljs-comment">// Setzt den Pin (9) der roten LED als Ausgang</span><br />}<br /><br /><span class="hljs-comment">// loop() läuft als Endlosschleife. Hier kommt das Hauptprogramm rein. </span><br /><span class="hljs-keyword">void</span> <span class="hljs-built_in">loop</span>() {<br />  <span class="hljs-built_in">digitalWrite</span>(PIN_LED,<span class="hljs-literal">HIGH</span>);  <span class="hljs-comment">// Ausgang HIGH (5V), LED an</span><br />  <span class="hljs-built_in">delay</span>(<span class="hljs-number">300</span>);                  <span class="hljs-comment">// Programmverzögerung um 300 ms</span><br />  <span class="hljs-built_in">digitalWrite</span>(PIN_LED,<span class="hljs-literal">LOW</span>);   <span class="hljs-comment">// Ausgang LOW (0V), LED aus</span><br />  <span class="hljs-built_in">delay</span>(<span class="hljs-number">1000</span>);                 <span class="hljs-comment">// Programmverzögerung um 1s = 1000ms</span><br />}<br /></code></pre>
+</span></div></div></div></div>
+<div id="codeInfo">
+<ul>
+<li><code>#define PIN_LED 9</code> definiert eine Konstante (Platzhalter), die nicht im Speicher abgelegt wird, sondern beim Kompilieren im Programmcode mit dessem Wert ersetzt wird. <strong>Die Zeile endet nicht mit einem Semikolon.</strong></li>
+<li><code>void setup(){...}</code> ist eine Funktion, welche beim Starten des Arduino-Sketches genau einmal ausgeführt wird. Wie der Name es schon andeutet, werden in dieser Funktion zum Beispiel wichtige Eigenschaften des Boards konfiguriert.</li>
+<li>Die Funktion <code>void loop(){...}</code> wird in einer Endlosschleife ausgeführt. Hier sollte das Hauptprogramm stehen.</li>
+<li>Zum Konfigurieren der Pins als Eingang oder Ausgang wird der Befehrl <code>pinMode(pin,{INPUT/OUTPU})</code> verwendet.</li>
+<li>Wenn ein Pin als Ausgang definiert ist, kann mit dem Befehl <code>digitalWrite(pin,HIGH)</code> der entsprechende <code>pin</code> auf HIGH also 5 V gesetzt werden. Mit <code>digitalWrite(pin,LOW)</code> wird der Pin auf 0 V gesetzt.</li>
+<li>Der Befehl <code>delay(time_ms)</code> <strong>pausiert</strong> den Programmablauf um den angegeben Wert in Millisekunden.</li>
+</ul>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="ubersicht-verschiedener-leds"></a><a href="#ubersicht-verschiedener-leds" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Übersicht verschiedener LEDs</h2>
+<table>
+<thead>
+<tr><th>Farbe</th><th>Rot</th><th>Gelb</th><th>Grün</th><th>Blau</th><th>Weiß</th></tr>
+</thead>
+<tbody>
+<tr><td>Betriebspannung</td><td>2,0V - 2,2V</td><td>2,0V</td><td>2,1V</td><td>3.5V - 3.7V</td><td>3.6V</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="aufgaben"></a><a href="#aufgaben" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aufgaben</h2>
+<div id="aufgabe">
+<ol>
+<li>Bestimmen Sie für eine an 5V angeschlossene blaue LED den Vorwiderstand so, dass der Maximalstrom 20 mA nicht überschreitet.</li>
+<li>Lassen Sie die LED das SOS Signal morsen (3x kurz, 3x lang, 3x kurz).</li>
+<li>Schließen Sie eine weitere LED an einen anderen Pin an und lassen Sie beide LEDs <strong>abwechselnd</strong> blinken.</li>
+</ol>
+</div>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="spacehal.github.io/docs/input"><span>2. Eingaben</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#einfache-schaltung-fur-eine-led">Einfache Schaltung für eine LED</a></li><li><a href="#bestimmung-des-vorwiderstandes">Bestimmung des Vorwiderstandes</a></li><li><a href="#blink-programm">Blink-Programm</a></li><li><a href="#ubersicht-verschiedener-leds">Übersicht verschiedener LEDs</a></li><li><a href="#aufgaben">Aufgaben</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="spacehal.github.io/" class="nav-home"><img src="spacehal.github.io/img/logoSmallRed.svg" alt="Let&#x27;s rule the bots!  " width="66" height="58"/></a><div><a href="spacehal.github.io/blog">Blog</a></div><div><a href="http://www.osztiem.de/home/startseite/">OSZ TIEM</a></div></section><section class="copyright">Copyright © 2019 Stefan Warm</section></footer></div></body></html>
