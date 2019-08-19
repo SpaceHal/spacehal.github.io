@@ -66,7 +66,7 @@
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Die Taster</h1></header><article><div><span><p>Für das einfache Auslesen der drei Taster A,B und C können die drei Klassen <code>Zumo32U4ButtonA</code>, <code>Zumo32U4ButtonB</code> und <code>Zumo32U4ButtonC</code> genutzt werden.</p>
 <h2><a class="anchor" aria-hidden="true" id="bool-ispressed"></a><a href="#bool-ispressed" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>bool isPressed ()</code></h2>
-<p>Gibt <code>true</code> oder 1 zurück, wenn der entsprechnde Taster gedrückt ist und <code>flase</code> oder 0 wenn nicht. Der Taster wird nicht entprellt.</p>
+<p>Gibt <code>true</code> oder 1 zurück, wenn der entsprechende Taster gedrückt ist und <code>false</code> oder 0 wenn nicht. Der Taster wird nicht entprellt.</p>
 <h4><a class="anchor" aria-hidden="true" id="beispielprogramm"></a><a href="#beispielprogramm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispielprogramm</h4>
 <pre><code class="hljs css language-Arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;Zumo32U4.h&gt;</span></span>
 
@@ -140,7 +140,7 @@ Zumo32U4LCD lcd;
 
 <span class="hljs-keyword">void</span> <span class="hljs-built_in">loop</span>()
 {
-  <span class="hljs-comment">/* Wird die Methode getSingleDebouncedPress() regelmäßig in einer Schleife aufegrufen,
+  <span class="hljs-comment">/* Wird die Methode getSingleDebouncedPress() regelmäßig in einer Schleife aufgerufen,
    * so gibt sie true zurück, wenn der Taster gedrückt und false zurück, wenn der Taster 
    * nicht gedrückt ist. Die Methode ist nicht blockierend und entprellt den Taster*/</span>
   <span class="hljs-built_in">if</span> (buttonC.getSingleDebouncedPress())
@@ -155,10 +155,10 @@ Zumo32U4LCD lcd;
   }
 
   <span class="hljs-comment">/* Wenn nicht blockierende Methoden wie isPressed() oder
-   * getSingleDebouncedPress() verwendet werden, können mehrer Taster zu gleichen
+   * getSingleDebouncedPress() verwendet werden, können mehrere Taster zu gleichen
    * Zeit verwendet werden und außerdem noch andere Aufgaben zu geleichen Zeit
    * ausgeführt werden. In diesem Beispiel blinkt die rote LED, während der Taster C
-   * regelmäßg abgefragt wird. */</span>
+   * regelmäßig abgefragt wird. */</span>
   ledRed(<span class="hljs-built_in">millis</span>() % <span class="hljs-number">1024</span> &lt; <span class="hljs-number">100</span>); <span class="hljs-comment">// Hackerstyle zum Blinken der LED</span>
 }   
 </code></pre>
@@ -178,8 +178,8 @@ Zumo32U4LCD lcd;
               </script><script>
               var search = docsearch({
                 
-                apiKey: 'my-api-key',
-                indexName: 'my-index-name',
+                apiKey: '8a8e0b313860e2fe23d0d40ec6dcd649',
+                indexName: 'spacehal',
                 inputSelector: '#search_input_react',
                 algoliaOptions: {}
               });

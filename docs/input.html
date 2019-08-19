@@ -67,12 +67,12 @@
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">2. Den Arduino mit einem Taster steuern</h1></header><article><div><span><p>Im folgenden Programmbeispiel werden <strong>digitale Signale eingelesen</strong>. Hierzu soll ein Taster über den digitalen Pin 3 mit dem Arduino verbunden und eine LED gesteuert werden.</p>
 <h2><a class="anchor" aria-hidden="true" id="einen-taster-direkt-anschließen"></a><a href="#einen-taster-direkt-anschließen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Einen Taster direkt anschließen</h2>
 <p><img src="../img/ohnePullUpWiderstand.svg" alt="drawing" width=450px height=auto/></p>
-<p>Die einfachste Möglichkeit einen Taster anszuschließen, wäre ihn direkt mit einer Spannungsquelle (Vcc) und einem Arduino-Pin zu verbinden (<em>Abb. links</em>). Ein digitaler Arduino-Pin, welcher als Input konfuguriert ist, weist einen sehr hohen Innenwiderstand auf. Wird der Taster nun gedrückt, so würde die gesamte Spannung am Eingangspin abfallen. In unserem Beispiel also  ca. 5V am Pin 3.</p>
+<p>Die einfachste Möglichkeit einen Taster anszuschließen, wäre ihn direkt mit einer Spannungsquelle (Vcc) und einem Arduino-Pin zu verbinden (<em>Abb. links</em>). Ein digitaler Arduino-Pin, welcher als Input konfiguriert ist, weist einen sehr hohen Innenwiderstand auf. Wird der Taster nun gedrückt, so würde die gesamte Spannung am Eingangspin abfallen. In unserem Beispiel also  ca. 5V am Pin 3.</p>
 <p>Ist der Taster jedoch <strong>offen</strong>, so wäre das Potential am Eingangspin unbestimmt oder auch schwebend (<em>engl.: floating</em>) und nicht, wie man annehmen könnte null. In Abhängigkeit von der Umgebung (z.B. eine Hand, die sich der Schaltung nähert) ändert sich die anliegende Spannung und der Zustand des Pins ist unvorhersehbar (HIGH oder LOW).</p>
 <p>Um das zu ändern, müsste der Pin außerdem mit der Masse verbunden werden. In der rechten Abbildung ist genau das geschehen, nur mit dem Unterschied, dass der Taster zwischen dem Pin und der Masse liegt. Ist der Taster offen, wäre alles in Ordnung (am Pin liegen dann Vcc = 5V). Problematisch wird es aber, wenn der Taster gedrückt wird. Dann entsteht ein <strong>Kurzschluss</strong> zwischen Vcc und GND, was unbedingt vermieden werden sollte.</p>
 <h2><a class="anchor" aria-hidden="true" id="taster-mit-pullup-widerstand-anschließen"></a><a href="#taster-mit-pullup-widerstand-anschließen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Taster mit Pullup-Widerstand anschließen</h2>
 <p><img src="../img/PullUpWiderstand.svg" alt="drawing" width=400px height=auto/></p>
-<p>Zum Verhindern eines Kruzschlusses beim Schließen des Taster wird zwischen Vcc und dem Taster ein Widerstand eingefügt. Ist der Taster offen, wird die Eingangsspannung des Pins auf die angeschlossene Spannung Vcc hochgezogen, ohne das es einen Kurzschluss gibt. Daher auch der Name <strong>Pullup-Widerstand</strong>. Ist der Taster geschlossen, so ist der Pin direkt mit der Masser verbunden und die Spannung beträgt 0V.</p>
+<p>Zum Verhindern eines Kurzschlusses beim Schließen des Taster wird zwischen Vcc und dem Taster ein Widerstand eingefügt. Ist der Taster offen, wird die Eingangsspannung des Pins auf die angeschlossene Spannung Vcc hochgezogen, ohne das es einen Kurzschluss gibt. Daher auch der Name <strong>Pullup-Widerstand</strong>. Ist der Taster geschlossen, so ist der Pin direkt mit der Masse verbunden und die Spannung beträgt 0V.</p>
 <p>Geeignete Werte für eine Pullup-Widerstand sind \(R_\text{up} = 10 k\Omega \cdots 20 k\Omega \)</p>
 <h2><a class="anchor" aria-hidden="true" id="interner-pull-up-widerstand"></a><a href="#interner-pull-up-widerstand" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interner Pull-Up Widerstand</h2>
 <p><img src="../img/intPullUpWiderstand.svg" alt="UP_Down Widerstand"></p>
@@ -101,9 +101,9 @@
 <h2><a class="anchor" aria-hidden="true" id="aufgaben"></a><a href="#aufgaben" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aufgaben</h2>
 <div id="aufgabe">
 <ol>
-<li>Ändern Sie Ihre Schaltung und nutzen Sie anstelle des internen, einen externen Pullup-Widerstand mit ca. 20 kOhm. Ändern Sie hierfür auch den Programmcod.</li>
-<li>Ändern Sie Ihre Schaltung so (<strong>ohne Änderung im Programmcode)</strong>, dass die LED beim Drücken des Tasters ausgeschaltet wird? Bauen sie die Schaltung auf und dokumentieren Sie diese z.B. mit Fritzing.</li>
-<li>Ändern sie das gegebene Programm so, dass beim Drücken des Tasters, eine angeschlossene LED blinkt (1 Sekunde an, 1 Sekunde aus). Verhält sich ihr Programm wie Sie es erwarten?</li>
+<li>Ändern Sie Ihre Schaltung und nutzen Sie anstelle des internen, einen externen Pullup-Widerstand mit ca. 20 kOhm. Ändern Sie hierfür auch den Programmcode.</li>
+<li>Ändern Sie Ihre Schaltung so (<strong>ohne Änderung im Programmcode)</strong>, dass die LED beim Drücken des Tasters ausgeschaltet wird? Bauen sie die Schaltung auf und dokumentieren Sie diese z.B. mit Fritzing.</li>
+<li>Ändern sie das gegebene Programm so, dass beim Drücken des Tasters, eine angeschlossene LED blinkt (1 Sekunde an, 1 Sekunde aus). Verhält sich ihr Programm wie Sie es erwarten?</li>
 <li>Lassen Sie mit dem delay()-Befehl gleichzeitig zwei LEDs mit verschiedenen Geschwindigkeiten blinken.</li>
 </ol>
 </div>
@@ -121,8 +121,8 @@
               </script><script>
               var search = docsearch({
                 
-                apiKey: 'my-api-key',
-                indexName: 'my-index-name',
+                apiKey: '8a8e0b313860e2fe23d0d40ec6dcd649',
+                indexName: 'spacehal',
                 inputSelector: '#search_input_react',
                 algoliaOptions: {}
               });

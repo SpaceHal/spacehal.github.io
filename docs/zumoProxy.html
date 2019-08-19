@@ -68,7 +68,7 @@
 <p>Der Zumo32u4 hat drei IR-Näherungssensoren, welche in verschiedene Richtungen vom Zumo weg zeigen und <strong>nahe Objekte erkennen</strong> können.</p>
 <p><img src="../img/ZumoProxyDown.jpg" alt="Näherungssensoren des Zumo" width=80% height=auto/></p>
 <p>Die Näherungssensoren  geben an, ob (reflektiertes) IR-Licht detektiert wurde oder nicht. Allerdings sind so konzipiert, dass sie nur Licht detektieren, welches bei einer Frequenz von 38 kHz schnell ein- und ausgeschaltet (moduliert) wird. Im Gegensatz zu den Liniensensoren habe die drei Näherungssensoren keinen integrierten IR-Sender. Stattdessen erfassen sie reflektiertes 38 kHz IR-Licht, das von 4 IR-LEDs auf dem Zumo 32U4 Mainboard abgestrahlt werden kann. Die Näherungssensoren sind nach den Richtungen benannt, in die sie zeigen: links, vorne oder rechts. Auf der Platine sind sie mit LFT, FRONT und RGT gekennzeichnet. Das für die Näherungssensoren verwendete Bauteil ist das <a href="https://www.pololu.com/file/0J615/tssp77038.pdf">Vishay TSSP77038 IR-Empfängermodul</a>.</p>
-<p>Das von den Liniensensoren ausgestrahlte Infrarotlicht kann Messungen der Näherungssensoren stören und zu Fehlern führen. Daher wird empfohlen, die Bodensensoren auszuschalten, bevor Sie die Näherungssensoren verwendet werden. Die Klasse <code>Zumo32U4ProximitySensors</code> aus der Zumo32U4 Bibliothek berücksichtigt den Enfluss der Liniensensoren und schaltet diese während der Messungen mit den Näherungssensoren ab.</p>
+<p>Das von den Liniensensoren ausgestrahlte Infrarotlicht kann Messungen der Näherungssensoren stören und zu Fehlern führen. Daher wird empfohlen, die Bodensensoren auszuschalten, bevor Sie die Näherungssensoren verwendet werden. Die Klasse <code>Zumo32U4ProximitySensors</code> aus der Zumo32U4 Bibliothek berücksichtigt den Einfluss der Liniensensoren und schaltet diese während der Messungen mit den Näherungssensoren ab.</p>
 <p>IR-Näherungssensoren können auch verwendet werden, um Befehle von herkömmlichen <strong>IR-Fernbedienungen</strong> zu empfangen.</p>
 <h3><a class="anchor" aria-hidden="true" id="ir-leds-fur-die-objekterkennung"></a><a href="#ir-leds-fur-die-objekterkennung" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IR-LEDs für die Objekterkennung</h3>
 <p>Auf dem Zumo32u4 Mainboard befinden sich auch 4 IR-LEDs, welche benötigt werden, um zusammen mit den 3 IR-Näherungssensoren nahe Objekte erkennen zu können:</p>
@@ -95,12 +95,12 @@
 <li>Liniensensoren IR LEDs deaktivieren.</li>
 <li>Für jeden festgelegten <strong>Helligkeitswert</strong> der LEDs werden folgende Aktionen ausgeführt:
 <ol>
-<li>Startet IR Pulse mit den beiden IR-LEDs auf der <em>linken</em> Seite.</li>
+<li>Startet IR-Pulse mit den beiden IR-LEDs auf der <em>linken</em> Seite.</li>
 <li>Wertet jeden IR-Sensor aus.</li>
-<li>Schaltet die LED Pulse aus.</li>
-<li>Startet IR Pulse mit den beiden IR-LEDs auf der <em>rechten</em> Seite.</li>
+<li>Schaltet die LED-Pulse aus.</li>
+<li>Startet IR-Pulse mit den beiden IR-LEDs auf der <em>rechten</em> Seite.</li>
 <li>Wertet jeden IR-Sensor aus.</li>
-<li>Schaltet die LED Pulse aus.</li>
+<li>Schaltet die LED-Pulse aus.</li>
 </ol></li>
 </ol>
 <blockquote>
@@ -123,7 +123,7 @@ proxSensor.initFrontSensor();         <span class="hljs-comment">// Initialisier
 <p>Legt eine Reihe von Helligkeitswerten für die IR-LED fest, welche von der Methode <code>read()</code> verwendet wird.</p>
 <p>Parameter</p>
 <ul>
-<li><code>levels</code> Pointer zu einem Array mit Hellogkeitswerten</li>
+<li><code>levels</code> Pointer zu einem Array mit Helligkeitswerten</li>
 <li><code>levelCount</code> Anzahl der Helligkeitswerte</li>
 </ul>
 <pre><code class="hljs css language-Arduino">Zumo32U4ProximitySensors proxSensors;                       <span class="hljs-comment">// Objekt erzeugen</span>
@@ -135,17 +135,17 @@ proxSensors.setBrightnessLevels(levels, <span class="hljs-keyword">sizeof</span>
 <p><code>void setPeriod (uint16_t period)</code></p>
 <h2><a class="anchor" aria-hidden="true" id="auslesen"></a><a href="#auslesen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Auslesen</h2>
 <h3><a class="anchor" aria-hidden="true" id="uint8_t-countsleftwithleftleds"></a><a href="#uint8_t-countsleftwithleftleds" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>uint8_t countsLeftWithLeftLeds()</code></h3>
-<p>Gibt die <strong>Anzahl</strong> der Helligkeitswert der linken LED zurück, bei denen der linke Näherungssensor aktiviert wurde.</p>
+<p>Gibt die <strong>Anzahl</strong> der Helligkeitswerte der linken LED zurück, bei denen der linke Näherungssensor aktiviert wurde.</p>
 <h3><a class="anchor" aria-hidden="true" id="uint8_t-countsleftwithrightleds"></a><a href="#uint8_t-countsleftwithrightleds" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>uint8_t countsLeftWithRightLeds()</code></h3>
-<p>Gibt die <strong>Anzahl</strong> der Helligkeitswert der rechten LED zurück, bei denen der linke Näherungssensor aktiviert wurde.</p>
+<p>Gibt die <strong>Anzahl</strong> der Helligkeitswerte der rechten LED zurück, bei denen der linke Näherungssensor aktiviert wurde.</p>
 <h3><a class="anchor" aria-hidden="true" id="uint8_t-countsrightwithleftleds"></a><a href="#uint8_t-countsrightwithleftleds" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>uint8_t countsRightWithLeftLeds()</code></h3>
-<p>Gibt die <strong>Anzahl</strong> der Helligkeitswert der linken LED zurück, bei denen der rechte Näherungssensor aktiviert wurde.</p>
+<p>Gibt die <strong>Anzahl</strong> der Helligkeitswerte der linken LED zurück, bei denen der rechte Näherungssensor aktiviert wurde.</p>
 <h3><a class="anchor" aria-hidden="true" id="uint8_t-countsrightwithrightleds"></a><a href="#uint8_t-countsrightwithrightleds" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>uint8_t countsRightWithRightLeds()</code></h3>
-<p>Gibt die <strong>Anzahl</strong> der Helligkeitswert der rechten LED zurück, bei denen der rechte Näherungssensor aktiviert wurde.</p>
+<p>Gibt die <strong>Anzahl</strong> der Helligkeitswerte der rechten LED zurück, bei denen der rechte Näherungssensor aktiviert wurde.</p>
 <h3><a class="anchor" aria-hidden="true" id="uint8_t-countsfrontwithleftleds"></a><a href="#uint8_t-countsfrontwithleftleds" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>uint8_t countsFrontWithLeftLeds()</code></h3>
-<p>Gibt die <strong>Anzahl</strong> der Helligkeitswert der linken LED zurück, bei denen der mittlere Näherungssensor aktiviert wurde.</p>
+<p>Gibt die <strong>Anzahl</strong> der Helligkeitswerte der linken LED zurück, bei denen der mittlere Näherungssensor aktiviert wurde.</p>
 <h3><a class="anchor" aria-hidden="true" id="uint8_t-countsfrontwithredleds"></a><a href="#uint8_t-countsfrontwithredleds" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>uint8_t countsFrontWithRedLeds()</code></h3>
-<p>Gibt die <strong>Anzahl</strong> der Helligkeitswert der rechten LED zurück, bei denen der mittlere Näherungssensor aktiviert wurde.</p>
+<p>Gibt die <strong>Anzahl</strong> der Helligkeitswerte der rechten LED zurück, bei denen der mittlere Näherungssensor aktiviert wurde.</p>
 <h3><a class="anchor" aria-hidden="true" id="bool-readbasicleft"></a><a href="#bool-readbasicleft" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>bool readBasicLeft()</code></h3>
 <h3><a class="anchor" aria-hidden="true" id="bool-readbasicright"></a><a href="#bool-readbasicright" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>bool readBasicRight()</code></h3>
 <h3><a class="anchor" aria-hidden="true" id="bool-readbasicfront"></a><a href="#bool-readbasicfront" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>bool readBasicFront()</code></h3>
@@ -164,8 +164,8 @@ proxSensors.setBrightnessLevels(levels, <span class="hljs-keyword">sizeof</span>
               </script><script>
               var search = docsearch({
                 
-                apiKey: 'my-api-key',
-                indexName: 'my-index-name',
+                apiKey: '8a8e0b313860e2fe23d0d40ec6dcd649',
+                indexName: 'spacehal',
                 inputSelector: '#search_input_react',
                 algoliaOptions: {}
               });
