@@ -19,6 +19,7 @@
 <url> <loc>https://spacehal.github.io/docs/zumoBasics</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://spacehal.github.io/docs/zumoBasics" /> </url>
 <url> <loc>https://spacehal.github.io/docs/zumoButtons</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://spacehal.github.io/docs/zumoButtons" /> </url>
 <url> <loc>https://spacehal.github.io/docs/zumoGettingStarted</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://spacehal.github.io/docs/zumoGettingStarted" /> </url>
+<url> <loc>https://spacehal.github.io/docs/zumoInstallation</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://spacehal.github.io/docs/zumoInstallation" /> </url>
 <url> <loc>https://spacehal.github.io/docs/zumoLine</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://spacehal.github.io/docs/zumoLine" /> </url>
 <url> <loc>https://spacehal.github.io/docs/zumoMotors</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://spacehal.github.io/docs/zumoMotors" /> </url>
 <url> <loc>https://spacehal.github.io/docs/zumoProxy</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://spacehal.github.io/docs/zumoProxy" /> </url>
