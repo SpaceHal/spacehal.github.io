@@ -74,22 +74,19 @@
 <li><strong>Fall C</strong>  Der Sensor befindet sich genau zur Hälfte über der Linie und ist somit genau über der Kante. Der Roboter kann einfache geradeaus fahren.</li>
 </ul>
 <p>Ein Algorithmus zur Steuerung des Roboters (ohne Fall C) könnte folgendermaßen aussehen:</p>
-<pre><code class="hljs"><span class="hljs-comment">// Einfacher Algorithmus zum Kantenfolgen mit nur einem IR-Sensor</span>
+<pre><code class="hljs"><span class="hljs-comment">// PSEUDO-CODE</span>
+<span class="hljs-comment">// Einfacher Algorithmus zum Kantenfolgen mit nur einem IR-Sensor</span>
 
 wertKante = <span class="hljs-number">600</span> <span class="hljs-comment">// muss angepasst werde</span>
 
 wiederhole
-{
     sensorWert = lese<span class="hljs-constructor">IRLicht()</span>
     <span class="hljs-keyword">if</span> ( sensorWert &gt; wertKante )
-    {
         fahre<span class="hljs-constructor">Links()</span> <span class="hljs-comment">// Fall A</span>
-    }
+        
     <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( sensorWert &lt; wertKante )
-    {
         fahre<span class="hljs-constructor">Rechts()</span> <span class="hljs-comment">// Fall B</span>
-    }
-}
+
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="kalibrierung"></a><a href="#kalibrierung" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kalibrierung</h4>
 <p>Bleibt die Frage, wie der Sensorwerte für die Linienkante ermittelt wird, der Roboter also kalibriert werden kann. Der einfachste, wenn auch nicht genaueste Weg ist, z.B. mit Hilfe der seriellen Schnittstelle die Maximalwert und den Minimalwert des reflektieren IR Lichts für die Linie und die Fläche daneben zu bestimmen. Der Mittelwert aus beiden Werten sollte der Linienkante entsprechen und kann dann als Konstante in das Programm eingefügt werden.</p>
@@ -109,32 +106,40 @@ wiederhole
 <h3><a class="anchor" aria-hidden="true" id="proportional-regler-einfach"></a><a href="#proportional-regler-einfach" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Proportional-Regler (einfach)</h3>
 <p>Der einfache Algorithmus zum Kantenfolgen funktioniert bei Linien und Abzweigung meistens ganz gut, lässt aber den Roboter die Linie entlangzappeln anstatt ihr geschmeidig zu folgen. Auch wird es mit dem einfache Algorithmus schwierig, dem Roboter bei Kreuzungen oder Abzweigung ein konkretes Verhalten zu programmieren.</p>
 <p>Ein wesentlich besserer Ansatz ist der <strong>Proportional-Regler</strong> (P-Regler), bei dem es nicht nur drei verschiedene Unterscheidungsstufen mit drei verschiedenen Motordrehzahlen gibt, sondern für jeden Unterschied zwischen Sollwert (also)</p>
-<p><img src="../img/GraphPRegler.png" alt="Proportional Control" width=95% height=auto/></p>
-<p>Bei einem (Proportional-)Regler wird davon ausgegangen, dass ein System eine <strong>Sollgröße</strong> \( w \) einhalten soll. In unseren Fall ist die Sollgröße der vom Sensor zu erzielende Sensorwert der Linienkante. Weicht der <strong>Istwert</strong> \( y \), also der aktuell gemessene Sensorwert von der Soll Größe ab, so lässt sich die <strong>Regeldifferenz</strong> bzw. der <strong>Fehlerwert</strong> \( e \) leicht als Differenz aus Soll- und Istwert berechnen: \( e = w - y \).
-Die <strong>Änderung</strong> der  Motordrehzahl \( \Delta d \) (ein Rad wird schneller und das andere wird langsamer) lässt sich nun mit einem Proportionalitätsfaktor \( k_p \) aus diesem Fehlerwert bestimmen:
-$$ \Delta d = k_p \cdot e $$.</p>
-<p>Ein Algorithmus für den Kantenfolger könnte wie folgt aussehen:</p>
-<pre><code class="hljs"><span class="hljs-comment">//Einfacher P-Regler für einen Kantenfolger</span>
+<p><img src="../img/GraphPRegler.png" alt="Proportional Control" width=75% height=auto/></p>
+<p>Bei einem (Proportional-)Regler wird davon ausgegangen, dass ein System eine <strong>Sollgröße</strong> \( w \) einhalten soll. In unseren Fall ist die Sollgröße der vom Sensor zu erzielende Sensorwert der Linienkante. Weicht der <strong>Istwert</strong> \( y \), also der aktuell gemessene Sensorwert von der Soll Größe ab,so lässt sich die <strong>Regeldifferenz</strong> bzw. der <strong>Fehlerwert</strong> \( e \) leicht als Differenz aus Soll- und Istwert berechnen: \( e = w - y \). <strong>Das Ziel eines jeden Reglers ist, es diesen Fehlerwert so klein wie möglich zu halten.</strong> Im Fall des Kantenfolgers bedeutet das, dass der Roboter möglichst immer über der Kante bleibt.</p>
+<p>Im Gegensatz zum 3-Stufen-Regler, bei dem für drei Bereiche drei feste Werte für die Motordrehzahl (und damit das Kurvenverhalten) festgelegt wurden, wird beim P-Regler die <strong>Abweichung der Motordrehzahl</strong> <code>deltaSpeed</code> von einer Normgröße <code>speed</code> gesteuert. Die aktuelle Motordrehzahl ergibt sich dann als Summe aus der Normgröße und dieser Abweichung. Wird die Geschwindigkeitsänderung <code>deltaSpeed</code> zur der Drehzahl des linken Rades addiert und von der Drehzahl des rechten Rades abgezogen, fährt der Roboter mit einer positiven Geschwindigkeitsänderung nach rechts und mit einer negativen Differenzgeschwindigkeit nach links:</p>
+<pre><code class="hljs"><span class="hljs-comment">// PSEUDO-CODE </span>
+<span class="hljs-comment">// speed &gt; 0: Rechtskurve</span>
+<span class="hljs-comment">// speed &lt; 0: Linkskurve</span>
 
-wertKante = <span class="hljs-number">600</span> <span class="hljs-comment">// Besser automatisch bestimmen.</span>
-Kp = <span class="hljs-number">1</span>          <span class="hljs-comment">// Proportionalitätsfaktor des P-Reglers. Probieren, um den richtigen Wert zu finden.</span>
-speed = <span class="hljs-number">100</span>     <span class="hljs-comment">// Richtwert für die Motordrehzahl</span>
+leftSpeed  = <span class="hljs-symbol">speed</span> + deltaSpeed  <span class="hljs-comment">// Drehzahl linkes Rad</span>
+rightSpeed = <span class="hljs-symbol">speed</span> - deltaSpeed  <span class="hljs-comment">// Drehzahl rechtes Rad</span>
+</code></pre>
+<p>Die <strong>Geschwindigkeitsänderung</strong> der  Motordrehzahl \( \Delta \text{Speed} \)  lässt sich mit einem Proportionalitätsfaktor \( k_p \) aus dem Fehlerwert bestimmen:
+$$ \Delta \text{Speed} = k_p \cdot e $$.</p>
+<p>Die Wahl des Faktors \( k_p \) hat einen erheblichen Einfluss auf Fahrverhalten des Roboters. Ist \(k_p \) zu klein, wird der Roboter die Kante ganz schnell verlieren, ist  \(k_p \) zu groß, so fängt der Roboter wieder an zu wackeln. In diesem Fall spricht man auch von einem oszillierenden Verhalten.</p>
+<h3><a class="anchor" aria-hidden="true" id="algorithmus-kantenfolger-mit-p-regler"></a><a href="#algorithmus-kantenfolger-mit-p-regler" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Algorithmus: Kantenfolger mit P-Regler</h3>
+<p>Der Algorithmus für den Kantenfolger mit P-Regler könnte wie folgt aussehen:</p>
+<pre><code class="hljs"><span class="hljs-comment">// PSEUDO-CODE</span>
+<span class="hljs-comment">// Einfacher P-Regler für einen Kantenfolger</span>
+
+wertKante = <span class="hljs-number">600</span>   <span class="hljs-comment">// Besser automatisch bestimmen.</span>
+Kp        = <span class="hljs-number">0.3</span>   <span class="hljs-comment">// Proportionalitätsfaktor des P-Reglers. Ausprobieren, um den richtigen Wert zu finden.</span>
+speed     = <span class="hljs-number">100</span>   <span class="hljs-comment">// Richtwert für die Motordrehzahl (Normwert)</span>
 
 wiederhole
-{
-    sensorWert = leseIRLicht()
-    e = wertKante - sensorWert  <span class="hljs-comment">// Fehlerwert, Regeldifferenz</span>
-    deltaSpeed = Kp * e
-    leftSpeed = speed + deltaSpeed;
-    setMotors()
-
-}
-
+    sensorWert = lese<span class="hljs-constructor">IRLicht()</span>
+    e = wertKante - sensorWert       <span class="hljs-comment">// Fehlerwert, Regeldifferenz</span>
+    deltaSpeed = Kp<span class="hljs-operator"> * </span>e              <span class="hljs-comment">// Geschwindigkeitsänderung</span>
+    leftSpeed  = speed + deltaSpeed  <span class="hljs-comment">// Drehzahl linkes Rad</span>
+    rightSpeed = speed - deltaSpeed  <span class="hljs-comment">// Drehzahl rechtes Rad</span>
+    set<span class="hljs-constructor">Motors(<span class="hljs-params">leftSpeed</span>,<span class="hljs-params">rightSpeed</span>)</span>  <span class="hljs-comment">// Aktualisieren der Motordrehzahlen</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="linienfolger-mit-mehreren-ir-sensoren"></a><a href="#linienfolger-mit-mehreren-ir-sensoren" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Linienfolger mit mehreren IR Sensoren</h2>
 <h3><a class="anchor" aria-hidden="true" id="proportional-regler-komplex"></a><a href="#proportional-regler-komplex" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Proportional-Regler (komplex)</h3>
 <p><img src="../img/BotOnLine3Sens.png" alt="Line following robot with 3 Sensors" width=80% height=auto/></p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/botObstacle"><span>Hinderniserkennung</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#linienfolger-mit-einem-ir-sensor-kantenfolger">Linienfolger mit einem IR Sensor (Kantenfolger)</a><ul class="toc-headings"><li><a href="#kantenfolger-algorithmus">Kantenfolger-Algorithmus</a></li><li><a href="#aufgaben-kantenfolger">Aufgaben (Kantenfolger)</a></li><li><a href="#proportional-regler-einfach">Proportional-Regler (einfach)</a></li></ul></li><li><a href="#linienfolger-mit-mehreren-ir-sensoren">Linienfolger mit mehreren IR Sensoren</a><ul class="toc-headings"><li><a href="#proportional-regler-komplex">Proportional-Regler (komplex)</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/LogoSmallRed.svg" alt="Let&#x27;s rule the bots!  " width="66" height="58"/></a><div><a href="/blog">Blog</a><a href="https://www.youtube.com/watch?v=ARJ8cAGm6JE">HAL 9000</a></div><div><a href="http://www.osztiem.de/home/startseite/">OSZ TIEM</a></div></section><section class="copyright">Copyright © 2019 Stefan Warm</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/botObstacle"><span>Hinderniserkennung</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#linienfolger-mit-einem-ir-sensor-kantenfolger">Linienfolger mit einem IR Sensor (Kantenfolger)</a><ul class="toc-headings"><li><a href="#kantenfolger-algorithmus">Kantenfolger-Algorithmus</a></li><li><a href="#aufgaben-kantenfolger">Aufgaben (Kantenfolger)</a></li><li><a href="#proportional-regler-einfach">Proportional-Regler (einfach)</a></li><li><a href="#algorithmus-kantenfolger-mit-p-regler">Algorithmus: Kantenfolger mit P-Regler</a></li></ul></li><li><a href="#linienfolger-mit-mehreren-ir-sensoren">Linienfolger mit mehreren IR Sensoren</a><ul class="toc-headings"><li><a href="#proportional-regler-komplex">Proportional-Regler (komplex)</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/LogoSmallRed.svg" alt="Let&#x27;s rule the bots!  " width="66" height="58"/></a><div><a href="/blog">Blog</a><a href="https://www.youtube.com/watch?v=ARJ8cAGm6JE">HAL 9000</a></div><div><a href="http://www.osztiem.de/home/startseite/">OSZ TIEM</a></div></section><section class="copyright">Copyright © 2019 Stefan Warm</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
