@@ -66,7 +66,6 @@
 <pre><code class="hljs css language-Arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;Zumo32U4.h&gt;</span></span>
 
 Zumo32U4ButtonB buttonB;
-Zumo32U4LCD lcd;
 
 <span class="hljs-keyword">void</span> <span class="hljs-built_in">setup</span>()
 {
@@ -151,7 +150,7 @@ Zumo32U4LCD lcd;
 
   <span class="hljs-comment">/* Wenn nicht blockierende Methoden wie isPressed() oder
    * getSingleDebouncedPress() verwendet werden, können mehrere Taster zu gleichen
-   * Zeit verwendet werden und außerdem noch andere Aufgaben zu geleichen Zeit
+   * Zeit verwendet werden und außerdem noch andere Aufgaben zu gleichen Zeit
    * ausgeführt werden. In diesem Beispiel blinkt die rote LED, während der Taster C
    * regelmäßig abgefragt wird. */</span>
   ledRed(<span class="hljs-built_in">millis</span>() % <span class="hljs-number">1024</span> &lt; <span class="hljs-number">100</span>); <span class="hljs-comment">// Hackerstyle zum Blinken der LED</span>
