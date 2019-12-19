@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Programmiertechniken - Variablen und Schleifen · Let&#x27;s rule the bots!  </title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Variablen "/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Programmiertechniken - Variablen und Schleifen · Let&#x27;s rule the bots!  "/><meta property="og:type" content="website"/><meta property="og:url" content="https://spacehal.github.io/"/><meta property="og:description" content="## Variablen "/><meta property="og:image" content="https://spacehal.github.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://spacehal.github.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/LogoSmallRed.svg"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"/><link rel="alternate" type="application/atom+xml" href="https://spacehal.github.io/blog/atom.xml" title="Let&#x27;s rule the bots!   Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://spacehal.github.io/blog/feed.xml" title="Let&#x27;s rule the bots!   Blog RSS Feed"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Zilla+Slab:300,300i,500,600"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/LogoSmallRed.svg" alt="Let&#x27;s rule the bots!  "/><h2 class="headerTitleWithLogo">Let&#x27;s rule the bots!  </h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/helloworld" target="_self">Arduino</a></li><li class=""><a href="/docs/botEdgeFollower" target="_self">Robotik</a></li><li class=""><a href="/docs/zumoInstallation" target="_self">Zumo</a></li><li class=""><a href="/docs/moreInfo" target="_self">Links</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Grundlagen</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Grundlagen<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/helloworld">Hallo Welt</a></li><li class="navListItem"><a class="navItem" href="/docs/seriell">Serielle Schnittstelle</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/loopVariable">Variablen und Schleifen</a></li><li class="navListItem"><a class="navItem" href="/docs/input">Digitale Eingaben</a></li><li class="navListItem"><a class="navItem" href="/docs/millis">Zeitkritische Aufgaben</a></li><li class="navListItem"><a class="navItem" href="/docs/stateMachine">Endliche Automaten</a></li><li class="navListItem"><a class="navItem" href="/docs/debounce">Entprellen</a></li><li class="navListItem"><a class="navItem" href="/docs/pwm">PWM Signal</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Motorsteuerung<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/motorHBridge">Motor mit H-Brücke</a></li><li class="navListItem"><a class="navItem" href="/docs/motorPWM">Motordrehzahl</a></li></ul></div></div></section></div><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Programmiertechniken - Variablen und Schleifen · Let&#x27;s rule the bots!  </title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Variablen "/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Programmiertechniken - Variablen und Schleifen · Let&#x27;s rule the bots!  "/><meta property="og:type" content="website"/><meta property="og:url" content="https://spacehal.github.io/"/><meta property="og:description" content="## Variablen "/><meta property="og:image" content="https://spacehal.github.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://spacehal.github.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/LogoSmallRed.svg"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"/><link rel="alternate" type="application/atom+xml" href="https://spacehal.github.io/blog/atom.xml" title="Let&#x27;s rule the bots!   Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://spacehal.github.io/blog/feed.xml" title="Let&#x27;s rule the bots!   Blog RSS Feed"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="/js/load-mathjax.js" async=""></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/LogoSmallRed.svg" alt="Let&#x27;s rule the bots!  "/><h2 class="headerTitleWithLogo">Let&#x27;s rule the bots!  </h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/helloworld" target="_self">Arduino</a></li><li class=""><a href="/docs/botEdgeFollower" target="_self">Robotik</a></li><li class=""><a href="/docs/zumoInstallation" target="_self">Zumo</a></li><li class=""><a href="/docs/moreInfo" target="_self">Links</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Grundlagen</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Grundlagen<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/helloworld">Hallo Welt</a></li><li class="navListItem"><a class="navItem" href="/docs/seriell">Serielle Schnittstelle</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/loopVariable">Variablen und Schleifen</a></li><li class="navListItem"><a class="navItem" href="/docs/input">Digitale Eingaben</a></li><li class="navListItem"><a class="navItem" href="/docs/millis">Zeitkritische Aufgaben</a></li><li class="navListItem"><a class="navItem" href="/docs/stateMachine">Endliche Automaten</a></li><li class="navListItem"><a class="navItem" href="/docs/debounce">Entprellen</a></li><li class="navListItem"><a class="navItem" href="/docs/pwm">PWM Signal</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Motorsteuerung<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/motorHBridge">Motor mit H-Brücke</a></li><li class="navListItem"><a class="navItem" href="/docs/motorPWM">Motordrehzahl</a></li></ul></div></div></section></div><script>
             var coll = document.getElementsByClassName('collapsible');
             var checkActiveCategory = true;
             for (var i = 0; i < coll.length; i++) {
@@ -54,7 +54,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Programmiertechniken - Variablen und Schleifen</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="variablen"></a><a href="#variablen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Variablen</h2>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Programmiertechniken - Variablen und Schleifen</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="variablen"></a><a href="#variablen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Variablen</h2>
 <p>In der Informatik sind <strong>Variablen</strong> eine Art Platzhalter oder Container für Daten und Informationen. Der Inhalt einer Variablen kann sich jederzeit ändern. Um eine Variablen nutzen zu können, muss im Programmcode für jede Variable der <strong>Variablenname</strong> und der <strong>Datentyp</strong> (z.B. Text, Zahl, Buchstabe, ...) festgelegt werden. Diese Festlegung der Eigenschaften einer Variablen wird <strong>Deklaration</strong> bzw. <strong>Variablendeklaration</strong> genannt (von <a href="https://de.langenscheidt.com/latein-deutsch/declarare"><em>declarare</em></a> lat. bekannt machen, bezeichnen).</p>
 <h3><a class="anchor" aria-hidden="true" id="variablenname"></a><a href="#variablenname" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Variablenname</h3>
 <p>Der <strong>Variablenname</strong> soll immer beschreiben, welche Funktion oder welchen Inhalt eine Variable hat. Es ist sinnvoll, für Variablen Begriffe wie <code>messWertSensorLinks</code> oder <code>pinRoteLED</code> zu verwenden. Variablennamen sollten immer mit einem Kleinbuchstaben beginnen. Die Nutzung eines Unterstrichs zum Trennen einzelner Wörter sollte vermieden werden. Stattdessen kann zur verbesserten Lesbarkeit bei zusammengesetzten  Wörtern die Großschreibung verwendet werden. Statt <code>zustand_motor_links</code> sollte die Variable besser <code>zustandMotorLinks</code> genannt werden.</p>
@@ -125,11 +125,11 @@ auszeitRoteLed = <span class="hljs-number">300</span>;  <span class="hljs-commen
 <h3><a class="anchor" aria-hidden="true" id="beispiel"></a><a href="#beispiel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiel</h3>
 <pre><code class="hljs css language-Arduino"><span class="hljs-comment">// Einfaches Beispiel für eine for-Schleife</span>
 
-<span class="hljs-keyword">void</span> <span class="hljs-built_in">setup</span>() {
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
   <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">begin</span>(<span class="hljs-number">115200</span>);
   <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span>(<span class="hljs-string">"Warten (1 sec) ...."</span>);
   <span class="hljs-built_in">delay</span>(<span class="hljs-number">1000</span>);
-  <span class="hljs-built_in">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span> ; i&lt;<span class="hljs-number">10</span>;i++)
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span> ; i&lt;<span class="hljs-number">10</span>;i++)
   {
     <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">"Zähler: "</span>);
     <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span>(i);
@@ -137,7 +137,7 @@ auszeitRoteLed = <span class="hljs-number">300</span>;  <span class="hljs-commen
   }
 }
 
-<span class="hljs-keyword">void</span> <span class="hljs-built_in">loop</span>() {
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
   <span class="hljs-comment">// bleibt leer</span>
 }
 </code></pre>
@@ -145,19 +145,19 @@ auszeitRoteLed = <span class="hljs-number">300</span>;  <span class="hljs-commen
 <p>Schleifen können auch geschachtelt werden. Bei einer geschachtelten Schleife befindet sich im Rumpf der einen Schleife eine weitere Schleife.</p>
 <pre><code class="hljs css language-Arduino"><span class="hljs-comment">// Eine geschachtelte for-Schleife</span>
 
-<span class="hljs-keyword">void</span> <span class="hljs-built_in">setup</span>() {
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
   <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">begin</span>(<span class="hljs-number">115200</span>);
   <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span>(<span class="hljs-string">"Warten (1 sec) ...."</span>);
   <span class="hljs-built_in">delay</span>(<span class="hljs-number">1000</span>);
 
   <span class="hljs-keyword">int</span> i,j; <span class="hljs-comment">// Deklaration der Zählvariablen kann auch außerhalb der Schleife stattfinden</span>
-  <span class="hljs-built_in">for</span> (i = <span class="hljs-number">0</span> ; i&lt;<span class="hljs-number">10</span>;i++) <span class="hljs-comment">// Zeilen</span>
+  <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span> ; i&lt;<span class="hljs-number">10</span>;i++) <span class="hljs-comment">// Zeilen</span>
   {     
     <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span>();  
     <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">"Zeile: "</span>);
     <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(i);
     <span class="hljs-built_in">delay</span>(<span class="hljs-number">500</span>);
-    <span class="hljs-built_in">for</span>(j=<span class="hljs-number">0</span>; j&lt;<span class="hljs-number">10</span>; j++)  <span class="hljs-comment">// Spalten</span>
+    <span class="hljs-keyword">for</span>(j=<span class="hljs-number">0</span>; j&lt;<span class="hljs-number">10</span>; j++)  <span class="hljs-comment">// Spalten</span>
     {
         <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">"*"</span>);
         <span class="hljs-built_in">delay</span>(<span class="hljs-number">100</span>);
@@ -165,7 +165,7 @@ auszeitRoteLed = <span class="hljs-number">300</span>;  <span class="hljs-commen
   }
 }
 
-<span class="hljs-keyword">void</span> <span class="hljs-built_in">loop</span>() {
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
   <span class="hljs-comment">// bleibt leer</span>
 }
 </code></pre>
@@ -174,45 +174,45 @@ auszeitRoteLed = <span class="hljs-number">300</span>;  <span class="hljs-commen
 <ol>
 <li><p>Schreiben Sie ein Programm, welches die <strong>Blinkgeschwindigkeit</strong> einer (oder mehrerer) LEDs schrittweise von ganz langsam zu  ganz schnell und wieder ganz langsam, etc. ändert.</p></li>
 <li><p>Ändern Sie das Programm mit der geschachtelten Schleife so, dass auf dem seriellen Monitor folgender Text ausgegeben wird:</p>
-<pre><code class="hljs">Zeile: 0*
-Zeile: 1**
-Zeile: 2<span class="hljs-emphasis">***</span>
-Zeile: 3<span class="hljs-emphasis">***</span>*
-Zeile: 4<span class="hljs-strong">*****</span>
-Zeile: 5<span class="hljs-strong">*****</span>*
-Zeile: 6<span class="hljs-strong">*****</span>**
-Zeile: 7<span class="hljs-strong">*****</span><span class="hljs-emphasis">***</span>
-Zeile: 8<span class="hljs-strong">*****</span><span class="hljs-emphasis">***</span>*
-Zeile: 9<span class="hljs-strong">*****</span><span class="hljs-strong">*****</span>
+<pre><code class="hljs"><span class="hljs-attr">Zeile:</span> <span class="hljs-number">0</span><span class="hljs-string">*</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">1</span><span class="hljs-string">**</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">2</span><span class="hljs-string">***</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">3</span><span class="hljs-string">****</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">4</span><span class="hljs-string">*****</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">5</span><span class="hljs-string">******</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">6</span><span class="hljs-string">*******</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">7</span><span class="hljs-string">********</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">8</span><span class="hljs-string">*********</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">9</span><span class="hljs-string">**********</span>
 </code></pre>
 <p><em>Hinweis: Bei der Testbedingung im Schleifenkopf können auch zwei Variablen miteinander verglichen werden.</em></p></li>
 <li><p>Ändern Sie das Programm mit der geschachtelten Schleife noch einmal. Diesmal soll folgender Text ausgegeben werden:</p>
-<pre><code class="hljs">Zeile: 0<span class="hljs-strong">*****</span><span class="hljs-strong">*****</span>
-Zeile: 1<span class="hljs-strong">*****</span><span class="hljs-emphasis">***</span>*
-Zeile: 2<span class="hljs-strong">*****</span><span class="hljs-emphasis">***</span>
-Zeile: 3<span class="hljs-strong">*****</span>**
-Zeile: 4<span class="hljs-strong">*****</span>*
-Zeile: 5<span class="hljs-strong">*****</span>
-Zeile: 6<span class="hljs-emphasis">***</span>*
-Zeile: 7<span class="hljs-emphasis">***</span>
-Zeile: 8**
-Zeile: 9*
+<pre><code class="hljs"><span class="hljs-attr">Zeile:</span> <span class="hljs-number">0</span><span class="hljs-string">**********</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">1</span><span class="hljs-string">*********</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">2</span><span class="hljs-string">********</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">3</span><span class="hljs-string">*******</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">4</span><span class="hljs-string">******</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">5</span><span class="hljs-string">*****</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">6</span><span class="hljs-string">****</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">7</span><span class="hljs-string">***</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">8</span><span class="hljs-string">**</span>
+<span class="hljs-attr">Zeile:</span> <span class="hljs-number">9</span><span class="hljs-string">*</span>
 </code></pre></li>
 <li><p>Erweitern Sie folgendes Programmgerüst so, dass 5 angeschlossene LEDs wie unten abgebildet blinken. Zum vervollständigen des Programms dürfen Sie <strong>maximal zweimal</strong> den Befehl <code>digitalWrite()</code> verwenden.<br>
 Achten Sie beim Aufbauen der Schaltung auf die Verwendung der richtigen Pins.</p>
 <pre><code class="hljs css language-Arduino"><span class="hljs-comment">// 5 LEDs mit for-Schleife blinken lassen</span>
 <span class="hljs-keyword">int</span> dTime = <span class="hljs-number">200</span>;
 
-<span class="hljs-keyword">void</span> <span class="hljs-built_in">setup</span>()
-{
-    <span class="hljs-built_in">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt;= <span class="hljs-number">6</span>; i++)
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt;= <span class="hljs-number">6</span>; i++)
         {
             <span class="hljs-built_in">pinMode</span>(i, <span class="hljs-literal">OUTPUT</span>);
         }
 }
 
-<span class="hljs-keyword">void</span> <span class="hljs-built_in">loop</span>()
-{
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
     <span class="hljs-comment">/*
     * maximal zwei mal 'digitalWrite()' verwenden
     */</span>

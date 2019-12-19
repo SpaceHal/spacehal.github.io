@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
     <channel>
-        <title>Let&apos;s rule the bots!   Blog</title>
+        <title>Let's rule the bots!   Blog</title>
         <link>https://spacehal.github.io/blog</link>
-        <description>The best place to stay up-to-date with the latest Let&apos;s rule the bots!   news and events.</description>
+        <description>The best place to stay up-to-date with the latest Let's rule the bots!   news and events.</description>
         <lastBuildDate>Thu, 01 Aug 2019 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
-        <generator>Feed for Node.js</generator>
+        <generator>https://github.com/jpmonette/feed</generator>
         <image>
-            <title>Let&apos;s rule the bots!   Blog</title>
+            <title>Let's rule the bots!   Blog</title>
             <url>https://spacehal.github.io/img/LogoSmallRed.svg</url>
             <link>https://spacehal.github.io/blog</link>
         </image>
