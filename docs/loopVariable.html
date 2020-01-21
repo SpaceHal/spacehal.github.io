@@ -70,7 +70,7 @@
 <li><code>unsigned long</code>: Ähnlich wie <code>long</code>, allerdings werden nur positive ganzzahlige Werte gespeichert. Der Wertebereich ist 0 bis 4.294.967.295 = 2^32 - 1.</li>
 <li><code>float</code>: Kann 4 bit Fließkommazahlen (Dezimalbrüche mit festgelegter Genauigkeit) im Bereich -3,4028235E+38 bis 3,4028235E+38 speichern.</li>
 </ul>
-<p>Oft werden auch <a href="https://de.wikibooks.org/wiki/C-Programmierung_mit_AVR-GCC/_Datentypen">alternative Datentypen</a> benutzt, die die Kompatibilität  mit verschiedenen Mikrokontrollern verbessern soll:</p>
+<p>Oft werden auch <a href="https://de.wikibooks.org/wiki/C-Programmierung_mit_AVR-GCC/_Datentypen">alternative Datentypen</a> benutzt, die die Kompatibilität  mit verschiedenen Mikrocontrollern verbessern sollen:</p>
 <ul>
 <li><code>uint8_t</code> , <code>uint16_t</code>, <code>uint32_t</code>, <code>uint64_t</code>: Speichern positive ganzzahlige Werte mit der angegeben Bitbreite (8, 16, 32, 64 bit)</li>
 <li><code>int8_t</code> , <code>int16_t</code>, <code>int32_t</code>, <code>int64_t</code>: Speichert positive und negative ganzzahlige Werte mit der angegeben Bitbreite (8, 16, 32, 64 bit)</li>
@@ -80,8 +80,8 @@
 <span class="hljs-keyword">float</span> fehlerwert; <span class="hljs-comment">// Die Variable mit dem Namen fehlerwert kann auch eine Fließkommazahl (Dezimalbruch) sein.</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="zuweisung"></a><a href="#zuweisung" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Zuweisung</h3>
-<p>Nachdem eine Variable <strong>deklariert</strong> wurde, ist es möglich ihr auch einen <strong>Wert zuzuweisen</strong>. Zuweisungen werden mit dem <code>=</code> Operator durchgeführt. Auch wenn es nicht immer ganz offensichtlich ist, sollte der  <code>=</code> Operator nicht mit dem Gleichheitszeichen (=) in der Mathematik verwechselt werden. Das Gleichheitszeichen drückt aus, dass etwas <strong>gleich ist</strong>. Der Zuweisungs-Operator <strong>weist</strong> der Variablen einen Wert <strong>zu</strong>. Dieser Unterschied wird später wichtig, wenn Vergleichsoperatoren wie zum Beispiel <code>==</code> verwendet werden.</p>
-<p>Zuweisung können getrennt von der Variablendeklaration durchgeführt werden. Wird einer Variablen das erste Mal ein Wert zugewiesen, spricht man auch von der <strong>Initialisierung</strong> der Variablen. Bevor eine Variable initialisiert wurde,  ist der Wert der Variablen unbekannt.</p>
+<p>Nachdem eine Variable <strong>deklariert</strong> wurde, ist es möglich, ihr auch einen <strong>Wert zuzuweisen</strong>. Zuweisungen werden mit dem <code>=</code> Operator durchgeführt. Auch wenn es nicht immer ganz offensichtlich ist, sollte der  <code>=</code> Operator nicht mit dem Gleichheitszeichen (=) in der Mathematik verwechselt werden. Das Gleichheitszeichen drückt aus, dass etwas <strong>gleich ist</strong>. Der Zuweisungs-Operator <strong>weist</strong> der Variablen einen Wert <strong>zu</strong>. Dieser Unterschied wird später wichtig, wenn Vergleichsoperatoren wie zum Beispiel <code>==</code> verwendet werden.</p>
+<p>Zuweisungen können getrennt von der Variablendeklaration durchgeführt werden. Wird einer Variablen das erste Mal ein Wert zugewiesen, spricht man auch von der <strong>Initialisierung</strong> der Variablen. Bevor eine Variable initialisiert wurde,  ist der Wert der Variablen unbekannt.</p>
 <pre><code class="hljs css language-Arduino"><span class="hljs-keyword">int</span> auszeitRoteLed;    <span class="hljs-comment">// Variablendeklaration (Wert der Variable ist unbekannt)</span>
 auszeitRoteLed = <span class="hljs-number">1000</span>; <span class="hljs-comment">// Zuweisung und Initialisierung</span>
 <span class="hljs-comment">/*
@@ -100,7 +100,7 @@ auszeitRoteLed = <span class="hljs-number">300</span>;  <span class="hljs-commen
 <li>Überprüfen der <strong>Testbedingung</strong> mittels logischer Ausdrücke. Im obigen Beispiel liefert die Testbedingung so lange<code>true</code>, wie der Wert von  <code>i</code> kleiner als <code>10</code> ist. Für <code>i = 10</code> oder Werte größer <code>10</code> liefert die Testbedingung <code>false</code>.</li>
 <li>Wenn die Testbedingung <code>false</code> liefert, wird die Schleife  <strong>direkt beendet</strong> (ohne die Anweisungen im Schleifenrumpf auszuführen).</li>
 <li>Wenn die Testbedingung <code>true</code> liefert, werden die Anweisungen im Schleifenrumpf  ausgeführt.</li>
-<li><strong>Aktualisieren</strong> der Zählvariable. Der Ausdruck <code>i++</code> bedeutet <code>i=i+1</code> und erhöht die Variable <code>i</code> bei jedem Durchlauf.</li>
+<li><strong>Aktualisieren</strong> der Zählvariable. Der Ausdruck <code>i++</code> bedeutet <code>i=i+1</code> und erhöht den Wert der Variable <code>i</code> bei jedem Durchlauf.</li>
 </ol>
 <blockquote>
 <p>Die einzelnen Ausdrücke im Schleifenkopf werden mit einem <strong>Semikolon</strong> voneinander getrennt.</p>
@@ -173,7 +173,7 @@ auszeitRoteLed = <span class="hljs-number">300</span>;  <span class="hljs-commen
 <h2><a class="anchor" aria-hidden="true" id="aufgaben"></a><a href="#aufgaben" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aufgaben</h2>
 <div id="aufgabe">
 <ol>
-<li><p>Schreiben Sie ein Programm, welches die <strong>Blinkgeschwindigkeit</strong> einer (oder mehrerer) LEDs schrittweise von ganz langsam zu  ganz schnell und wieder ganz langsam, etc. ändert.</p></li>
+<li><p>Schreiben Sie ein Programm, welches die <strong>Blinkgeschwindigkeit</strong> einer (oder mehrerer) LEDs schrittweise von ganz langsam zu  ganz schnell und wieder zu ganz langsam, etc. ändert.</p></li>
 <li><p>Ändern Sie das Programm mit der geschachtelten Schleife so, dass auf dem seriellen Monitor folgender Text ausgegeben wird:</p>
 <pre><code class="hljs"><span class="hljs-attr">Zeile:</span> <span class="hljs-number">0</span><span class="hljs-string">*</span>
 <span class="hljs-attr">Zeile:</span> <span class="hljs-number">1</span><span class="hljs-string">**</span>
@@ -199,10 +199,10 @@ auszeitRoteLed = <span class="hljs-number">300</span>;  <span class="hljs-commen
 <span class="hljs-attr">Zeile:</span> <span class="hljs-number">8</span><span class="hljs-string">**</span>
 <span class="hljs-attr">Zeile:</span> <span class="hljs-number">9</span><span class="hljs-string">*</span>
 </code></pre></li>
-<li><p>Schreiben Sie ein Programm, welches mit <code>Serial.print()</code> auf dem seriellen Monitor alle Zahlen von 0 bis 100 ausgibt. Als Ausnahme soll jedoch für jede Zahl, die durch 3 teilbar ist <em>Fizz</em> und für jede Zahl, die durch 5 teilbar ist <em>Buzz</em> ausgegeben werden.
+<li><p>Schreiben Sie ein Programm, welches mit <code>Serial.print()</code> auf dem seriellen Monitor alle Zahlen von 0 bis 100 ausgibt. Als Ausnahme soll jedoch für jede Zahl, die durch 3 teilbar ist, <em>Fizz</em> und für jede Zahl, die durch 5 teilbar ist, <em>Buzz</em> ausgegeben werden.
 Wenn Ihr Programm funktioniert, erweitern Sie es so, dass es <em>FizzBuzz</em> ausgibt, wenn die Zahl durch 3 und 5 teilbar ist.</p>
 <p><em>Hinweis: Verwenden Sie den <a href="https://www.arduino.cc/reference/de/language/structure/arithmetic-operators/modulo/">Modulo-Opertor</a> <code>%</code> für die Division mit Rest.</em></p></li>
-<li><p>Erweitern Sie folgendes Programmgerüst so, dass 5 angeschlossene LEDs wie unten abgebildet blinken. Zum vervollständigen des Programms dürfen Sie <strong>maximal zweimal</strong> den Befehl <code>digitalWrite()</code> verwenden.<br>
+<li><p>Erweitern Sie folgendes Programmgerüst so, dass 5 angeschlossene LEDs wie unten abgebildet blinken. Zum Vervollständigen des Programms dürfen Sie <strong>maximal zweimal</strong> den Befehl <code>digitalWrite()</code> verwenden.<br>
 Achten Sie beim Aufbauen der Schaltung auf die Verwendung der richtigen Pins.</p>
 <pre><code class="hljs css language-Arduino"><span class="hljs-comment">// 5 LEDs mit for-Schleife blinken lassen</span>
 <span class="hljs-keyword">int</span> dTime = <span class="hljs-number">200</span>;
