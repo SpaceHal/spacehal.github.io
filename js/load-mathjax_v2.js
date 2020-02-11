@@ -1,3 +1,4 @@
+//alert("MathJAx config loads");
 var font = "Neo-Euler";
 MathJax.Hub.Config({
     tex2jax: {
@@ -13,10 +14,11 @@ MathJax.Hub.Config({
         font: font
     },
     "HTML-CSS": {
-        webFont: font,
+        fonts: ['Neo-Euler', 'Gyre'],
+        /*webFont: font,
         imageFont: font,
         preferredFont: font,
-        availableFonts: [],
+        availableFonts: [],*/
         scale: 85,
         mtextFontInherit: true
     }
