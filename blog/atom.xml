@@ -2,12 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://spacehal.github.io/blog</id>
     <title>Let's rule the bots!   Blog</title>
-    <updated>2019-08-01T06:00:00.000Z</updated>
+    <updated>2020-06-20T06:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://spacehal.github.io/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Let's rule the bots!   news and events.</subtitle>
     <logo>https://spacehal.github.io/img/LogoSmallRed.svg</logo>
     <rights>Copyright © 2020 Stefan Warm</rights>
+    <entry>
+        <title type="html"><![CDATA[Robotik-Unterricht]]></title>
+        <id>https://spacehal.github.io/blog/2020/06/20/Schulversuch.html</id>
+        <link href="https://spacehal.github.io/blog/2020/06/20/Schulversuch.html"/>
+        <updated>2020-06-20T06:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>Nach vielen Versuchen und etlichen Anträgen geht es im kommenden Schuljahr endlich los: Wir bieten einen Robotik Kurs (<a href="https://www.osztiem.de/bildungsangebote/berufsoberschule/">Mobile Autonome Roboter</a>) durchgehend von der 11. bis zur 13. Klasse an. Ab der 12. Klassestufe ist es ein Grundkurs, in welchem auc...</p>]]></summary>
+        <author>
+            <name>Stefan W.</name>
+            <email/>
+            <uri/>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Willkommen]]></title>
         <id>https://spacehal.github.io/blog/2019/08/01/Wellcome.html</id>

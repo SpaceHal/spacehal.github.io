@@ -4,8 +4,8 @@
         <title>Let's rule the bots!   Blog</title>
         <link>https://spacehal.github.io/blog</link>
         <description>The best place to stay up-to-date with the latest Let's rule the bots!   news and events.</description>
-        <lastBuildDate>Thu, 01 Aug 2019 06:00:00 GMT</lastBuildDate>
-        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <lastBuildDate>Sat, 20 Jun 2020 06:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
             <title>Let's rule the bots!   Blog</title>
@@ -13,6 +13,13 @@
             <link>https://spacehal.github.io/blog</link>
         </image>
         <copyright>Copyright © 2020 Stefan Warm</copyright>
+        <item>
+            <title><![CDATA[Robotik-Unterricht]]></title>
+            <link>https://spacehal.github.io/blog/2020/06/20/Schulversuch.html</link>
+            <guid>https://spacehal.github.io/blog/2020/06/20/Schulversuch.html</guid>
+            <pubDate>Sat, 20 Jun 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Nach vielen Versuchen und etlichen Anträgen geht es im kommenden Schuljahr endlich los: Wir bieten einen Robotik Kurs (<a href="https://www.osztiem.de/bildungsangebote/berufsoberschule/">Mobile Autonome Roboter</a>) durchgehend von der 11. bis zur 13. Klasse an. Ab der 12. Klassestufe ist es ein Grundkurs, in welchem auc...</p>]]></description>
+        </item>
         <item>
             <title><![CDATA[Willkommen]]></title>
             <link>https://spacehal.github.io/blog/2019/08/01/Wellcome.html</link>
