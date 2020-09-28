@@ -16,8 +16,6 @@
         <summary type="html"><![CDATA[<p>Nach vielen Versuchen und etlichen Anträgen geht es im kommenden Schuljahr endlich los: Wir bieten einen Robotik Kurs (<a href="https://www.osztiem.de/bildungsangebote/berufsoberschule/">Mobile Autonome Roboter</a>) durchgehend von der 11. bis zur 13. Klasse an. Ab der 12. Klassestufe ist es ein Grundkurs, in welchem auc...</p>]]></summary>
         <author>
             <name>Stefan W.</name>
-            <email/>
-            <uri/>
         </author>
     </entry>
     <entry>
@@ -25,11 +23,9 @@
         <id>https://spacehal.github.io/blog/2019/08/01/Wellcome.html</id>
         <link href="https://spacehal.github.io/blog/2019/08/01/Wellcome.html"/>
         <updated>2019-08-01T06:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>Noch nicht perfekt und weit davon entfernt vollständig zu sein, aber trotzdem ...</p> <p>Die Seite <strong>&quot;Let's rule the bots!&quot;</strong> soll Inhalte zum dem Themen Arduino, Elektronik und Robotik verknüpfen. Mal schauen, ob es klappt.</p> ]]></summary>
+        <summary type="html"><![CDATA[<p>Noch nicht perfekt und weit davon entfernt vollständig zu sein, aber trotzdem ...</p> <p>Die Seite <strong>&quot;Let's rule the bots!&quot;</strong> soll Inhalte zum dem Themen Arduino, Elektronik und Robotik verknüpfen. Mal schauen, wie's wird ...</p> ]]></summary>
         <author>
             <name>Stefan W.</name>
-            <email/>
-            <uri/>
         </author>
     </entry>
 </feed>

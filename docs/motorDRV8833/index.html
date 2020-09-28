@@ -73,20 +73,31 @@
 <tbody>
 <tr><td>Freilauf</td><td>0</td><td>0</td></tr>
 <tr><td>Motorbremse</td><td>1</td><td>1</td></tr>
+<tr><td>Vorwärts</td><td>1</td><td>0</td></tr>
+<tr><td>Rückwärts</td><td>0</td><td>1</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="pwm-zum-steuern-der-geschwindigkeit"></a><a href="#pwm-zum-steuern-der-geschwindigkeit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PWM zum Steuern der Geschwindigkeit</h2>
+<p>Die oben dargestellten Betriebsmoden lassen sich noch durch 4 weitere Betriebsmoden für die Geschwindigkeitssteuerung ergänzen. Dies wird durch die Verwendung von PWM-Signalen realisiert.</p>
+<table>
+<thead>
+<tr><th>Motorfunktion   (Motor 1)</th><th>IN1</th><th>IN2</th></tr>
+</thead>
+<tbody>
 <tr><td>Vorwärts (Freilauf)</td><td>pwm</td><td>0</td></tr>
 <tr><td>Rückwärts  (Freilauf)</td><td>0</td><td>pwm</td></tr>
 <tr><td>Rückwärts (Bremsen)</td><td>pwm</td><td>1</td></tr>
 <tr><td>Vorwärts (Bremsen)</td><td>1</td><td>pwm</td></tr>
 </tbody>
 </table>
-<h2><a class="anchor" aria-hidden="true" id="pwm-zum-steuern-der-geschwindigkeit"></a><a href="#pwm-zum-steuern-der-geschwindigkeit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PWM zum Steuern der Geschwindigkeit</h2>
 <h2><a class="anchor" aria-hidden="true" id="beispiel-motor-mit-taster"></a><a href="#beispiel-motor-mit-taster" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiel (Motor mit Taster)</h2>
 <p>Im folgenden einfachen Beispiel soll ein Motor durch einen Taster gesteuert werden.
-Der verwendete <strong>Taster</strong> wird mit dem eingebauten Pull-Up-Widerstand des Arduinos am <strong>Pin A</strong>1 angelschlossen.
-Der Eingänge IN1 und IN2 des Motortreiber DRV8833 werden mit dem Pin 4 und Pin 5 des Arduinos verbunden. Der Motor selbst wird wie in der Abbildung dargestellt</p>
+Der verwendete <strong>Taster</strong> wird mit dem <a href="input#interner-pull-up-widerstand">eingebauten Pull-Up-Widerstand</a> des Arduinos am <strong>Pin A1</strong> angeschlossen (ein analoger Eingang kann immer auch als digitaler Eingang verwendet werden).
+Der Eingänge <strong>IN1 und IN2 des Motortreiber DRV8833</strong> werden mit dem <strong>Pin 5 und Pin 6 des Arduinos</strong> verbunden. Der Motor selbst wird wie in der Abbildung dargestellt mit den Ausgängen <strong>OUT1</strong> und <strong>OUT2</strong> des Motortreibers verbunden.</p>
+<p>Der Motortreiber wird mit einer <strong>separaten Spannungsversorgung</strong> (z.B. ein 9V Block oder 4x AA Batterien) betrieben werden, wobei der Minuspol der Batterien mit der Masse (GND) vom Arduino und dem Motortreiber DRV8833 verbunden wird.</p>
 <p><img src="../img/drv8833_Connection.png" alt="Motortreiber DRV8833 mit einem Arduino" width=410px height=auto/></p>
 <blockquote>
-<p>Der DRV8833 muss unbedingt mit einer <strong>separaten Spannungsversorgung</strong> (z.B. ein 9V Block oder 4x AA Batterien) betrieben werden. Würde der Motortreiber mit dem 5V Pin des Arduinos betrieben werden, könnte der Arduino oder der angeschlossene Rechner schaden nehmen.</p>
+<p>Der Motortreiber darf nicht an den 5V Ausgang des Arduinos angeschlossen werden.</p>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="code"></a><a href="#code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code</h3>
 <pre><code class="hljs css language-Arduino"><span class="hljs-comment">/* Einfaches Beispiel zum Ansteuern des DRV8833
@@ -110,8 +121,7 @@ Der Eingänge IN1 und IN2 des Motortreiber DRV8833 werden mit dem Pin 4 und Pin 
   <span class="hljs-built_in">pinMode</span>(in1, <span class="hljs-literal">OUTPUT</span>); <span class="hljs-comment">// DRV8833</span>
   <span class="hljs-built_in">pinMode</span>(in2, <span class="hljs-literal">OUTPUT</span>);
 
-  <span class="hljs-built_in">pinMode</span>(pinTaster1, <span class="hljs-literal">INPUT</span>);  <span class="hljs-comment">// Taster</span>
-  <span class="hljs-built_in">digitalWrite</span>(pinTaster1, <span class="hljs-literal">INPUT_PULLUP</span>); <span class="hljs-comment">// Pull-up Resistor</span>
+  <span class="hljs-built_in">pinMode</span>(pinTaster1, <span class="hljs-literal">INPUT_PULLUP</span>);  <span class="hljs-comment">// Eingang mit einem internen Pullup-Widerstand</span>
 }
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
@@ -140,7 +150,7 @@ Der Eingänge IN1 und IN2 des Motortreiber DRV8833 werden mit dem Pin 4 und Pin 
 <li>Sind beide Taster gedrückt, ist die Motorbremse aktiv.
 Schreiben Sie für diese Aufgabe die folgenden Funktionen selber: <code>dreheMotorLinks()</code>, <code>dreheMotorRechts()</code>,<code>stoppeMotorBremse()</code>, <code>stoppeMotorFreilauf</code>.</li>
 </ul></li>
-<li>Die Schaltung der Aufgabe 1 soll um zwei verschiedenfarbige LEDs erweitert werden. welche anzeigen, ober sich der Motor im Links- oder Rechtslauf befindet.</li>
+<li>Die Schaltung der Aufgabe 1 soll um zwei verschiedenfarbige LEDs erweitert werden. welche anzeigen, ob sich der Motor im Links- oder Rechtslauf befindet.</li>
 <li>Nun soll die Geschwindigkeit des Motor schrittweise mit den beiden Tastern gesteuert werden:
 <ul>
 <li>Mit dem einem Taster wird die Geschwindigkeit erhöht, mit dem anderen reduziert.</li>
