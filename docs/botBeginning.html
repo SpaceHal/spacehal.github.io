@@ -56,16 +56,8 @@
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Erste Übungen mit einem Roboter</h1></header><article><div><span><p>Wenn Sie die Inhalte aus dem Bereich <a href="helloworld">Arduino</a> durchgearbeitet haben, sollten Sie in der Lage sein einen einfachen, fahrbaren Roboter mit zwei Motoren aufzubauen. Hierfür kann entweder aus Acrylglas oder Sperrholz ein Chassis selber gefertigt werden oder es kann im Internet ein fertiges Chassis mit zwei geeigneten Motoren gekauft werden (Suchbegriff: <em>robot chassis 2wd</em>).</p>
 <p><img src="../img/ArduinoRobot_web.jpeg" alt="Robot" width=500pt height=auto/></p>
-<p>Alternativ kann auch ein fertiger Roboter verwendet werden. Eine paar mögliche Roboter sind im Folgenden aufgelistet:</p>
-<ul>
-<li><a href="https://www.dfrobot.com/product-2026.html">micro:Maqueen Plus</a> (mit Radencoder)</li>
-<li><a href="https://www.dfrobot.com/product-1783.html">micro: Maqueen Lite</a> (ohne Radencoder)</li>
-<li><a href="https://www.thymio.org/de/">Thymio Robot</a></li>
-<li><a href="https://meetedison.com/meet-edison-v2-0/">Meet Edsion V2.0</a></li>
-<li><a href="https://www.pololu.com/category/170/zumo-32u4-robot">Zumo 32u4</a> (Arduino)</li>
-<li><a href="http://arcbotics.com/products/sparki/">Sparki</a></li>
-<li>...</li>
-</ul>
+<p>Ein mögliche Schaltung von den Roboter mit drei Tastern, zwei LEDs und dem Motortreiber DRV8833 ist im Folgenden abgebildet. Achten Sie auf die externe Spannungsversorgung der Motoren.</p>
+<p><img src="../img/BotCircuit.png" alt="Robot" width=500pt height=auto/></p>
 <h2><a class="anchor" aria-hidden="true" id="aufgaben"></a><a href="#aufgaben" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aufgaben</h2>
 <p>Für die folgenden Aufgaben wird ein Roboter mit <strong>Differentialantrieb</strong> (<a href="https://link.springer.com/chapter/10.1007/978-3-319-62533-1_1#Sec7">differential drive</a>), also ein Roboter mit zwei unabhängig steuerbaren Rädern vorausgesetzt. Zusätzlich sollte der verwendete Roboter mindestens <strong>zwei, besser drei Taster</strong> und <strong>zwei oder mehr LEDs</strong> aufweisen. Weiter Sensoren werden an dieser Stelle nicht benötigt.</p>
 <div id="aufgabe">
