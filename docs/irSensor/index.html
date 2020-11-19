@@ -114,13 +114,16 @@
 <ol>
 <li><p>Recherchieren Sie die Lichtspektren verschiedener Lichtquellen und vergleichen Sie diese mit der spektralen Empfindlichkeit des <a href="irSensor#phototransistor-pt-333-3b">Phototransistors PT 333-3C</a>:</p>
 <p>a) Sonne (Tageslicht), b) LED-Lampe, c) Leuchtstoffröhre, d) Glühlampe</p></li>
-<li><p>Messen Sie mit einem Multimeter den Kollektorstrom des Phototransistors, wenn dieser eine Kollektor-Emitter-Spannung von 5 V aufweist. Welcher Kollektorstrom ergibt sich bei direkter und indirekter (Reflexion) Einstrahlung vom IR-Licht der IR-LED.</p></li>
-<li><p>Der maximale Kollektorstrom eines Phototransistors sei 1 mA. Schätzen Sie den benötigten Messwiderstand rechnerisch so ab, dass die Maximalspannung am Analogeingang des Arduinos 5V beträgt (<a href="irSensor#sensorschaltung-mit-ir-led-und-phototransistor">Schaltung</a>).</p></li>
-<li><p>Bauen Sie den IR-Sensor mit Phototransistor und IR-LED auf einem Steckbrett auf. Lesen Sie mit dem Analogeingang des Arduinos die Spannung am Messwiderstand \(R_M \approx 10 \text{ k}\Omega \) ein.</p>
-<p>Schreiben Sie ein Programm, welches auf dem seriellen Monitor (bzw. serielle Plotter) die Spannung am Messwiderstand ausgibt. Wie</p></li>
-<li><p>Sensor auf Tastendruck kalibrieren. Maxwert und Minwert innerhalb von 10 sec messen und alle folgenden Werte auf diese Werte kalibrieren.</p></li>
-<li><p>Einfachen Abstandssensor für weißes Blatt. Entfernung auf dem seriellen Monitor ausgeben.</p></li>
-<li><p>Erkennen einer schwarzen Linie testen.</p></li>
+<li><p>Messen Sie mit einem Multimeter den Kollektorstrom des Phototransistors, wenn dieser eine Kollektor-Emitter-Spannung von 5 V aufweist. Welcher Kollektorstrom ergibt sich bei direkter und indirekter (Reflexion) Einstrahlung vom IR-Licht der IR-LED. (\(R_V \approx 220 \text{ }\Omega \))</p></li>
+<li><p>Der maximale Kollektorstrom eines Phototransistors sei 1 mA. Schätzen Sie den benötigten Messwiderstand rechnerisch so ab, so dass die Maximalspannung am Analogeingang des Arduinos 5V beträgt (<a href="irSensor#sensorschaltung-mit-ir-led-und-phototransistor">Schaltung</a>).</p></li>
+<li><p>Bauen Sie den IR-Sensor mit Phototransistor und IR-LED \(R_V \approx 220 \text{ }\Omega \) auf einem Steckbrett auf. Lesen Sie mit dem Analogeingang des Arduinos die Spannung am Messwiderstand \(R_M \approx 10 \text{ k}\Omega \) ein.</p>
+<p>Schreiben Sie ein Programm, welches auf dem seriellen Monitor (bzw. serielle Plotter) die Spannung am Messwiderstand ausgibt.</p></li>
+<li><p>Erweitern Sie die Schaltung aus Aufgabe 4 um eine LED. Die LED soll leuchten , wenn der Sensor</p>
+<ol>
+<li>ein weißes Blatt erkennt,</li>
+<li>eine schwarze Linie auf dem Blatt erkennt.</li>
+</ol>
+<p><em>Hinweis: Bestimmen sie durch Probieren den Schwellwert für zum Erkennen des Blattes bzw. der schwarzen Linie.</em></p></li>
 </ol>
 </div>
 <h2><a class="anchor" aria-hidden="true" id="weiterführende-artikel"></a><a href="#weiterführende-artikel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Weiterführende Artikel</h2>

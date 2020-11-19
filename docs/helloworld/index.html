@@ -54,81 +54,17 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">&quot;Hallo Welt&quot; oder eine blinkende LED</h1></header><article><div><span><p>Das erste Programm (in der Arduinowelt <em>Sketch</em> genannt) lässt eine LED, die mit einem Vorwiderstand verbunden ist, regelmäßig blinken. Am folgenden  Programmbeispiel werden der Grundaufbau eines Arduino-Sketches und alle notwendigen Befehle erläutert. Sollten weitere Fragen zu einzelnen Befehlen auftauchen ist die <a href="https://www.arduino.cc/reference/de/">Arduino-Referenz</a> die beste Anlaufstelle.</p>
-<p>Mit einem Rechts-Klick auf einen Befehl in der Arduino-Umgebung kann die Befehls-Referenz auch direkt aufgerufen werden.
-<img src="../img/ArduinoReferenz.png" alt="drawing" width=400pt height=auto/></p>
-<h2><a class="anchor" aria-hidden="true" id="bauteilliste"></a><a href="#bauteilliste" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bauteilliste</h2>
-<p>Für die meisten, der hier folgenden Beispiele zum Thema Arduino, werden nur relativ wenig Bauteile benötigt. Mit Ausnahme vom Abschnitt <a href="analogInput">Analoger Eingang</a> können alle Beispiel und Aufgaben mit den folgenden Bauteilen aufgebaut werden.</p>
-<table>
-<thead>
-<tr><th>Bauteil</th><th>Anzahl</th></tr>
-</thead>
-<tbody>
-<tr><td>Arduino (Uno)</td><td>1</td></tr>
-<tr><td>LED</td><td>6</td></tr>
-<tr><td>Taster</td><td>2</td></tr>
-<tr><td>Widerstand 220 Ohm</td><td>6</td></tr>
-<tr><td>Widerstand 20 kOhm</td><td>2</td></tr>
-<tr><td>Steckbrett (half size)</td><td>1</td></tr>
-<tr><td>Steckbrett (mini)</td><td>1</td></tr>
-<tr><td>Verbindungskabel</td><td>ca. 10</td></tr>
-<tr><td>weitere Bauteile nach Bedarf</td><td></td></tr>
-</tbody>
-</table>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">&quot;Hallo Welt&quot; oder eine blinkende LED</h1></header><article><div><span><p>Das erste Programm (in der Arduinowelt <em>Sketch</em> genannt) lässt eine LED, die mit einem Vorwiderstand verbunden ist, regelmäßig blinken. Am folgenden  Programmbeispiel werden der Grundaufbau eines Arduino-Sketches und alle notwendigen Befehle erläutert.</p>
 <h2><a class="anchor" aria-hidden="true" id="einfache-schaltung-für-eine-led"></a><a href="#einfache-schaltung-für-eine-led" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Einfache Schaltung für eine LED</h2>
 <p>Am Anfang eines jeden Arduino-Programms steht natürlich die Schaltung. Für das <em>Hallo Welt</em> Beispiel soll eine LED mit einer entsprechenden Schaltung an den Arduino angeschlossen werden. Wichtig ist bei der LED, dass der lange Anschluss der Plus-Pol und der kurze Anschluss der Minus-Pol ist. <strong>Wird die LED falsch angeschlossen, wird sie nicht leuchten.</strong> Außerdem muss dafür gesorgt werden, dass der Strom durch die LED auf ca. 20 mA begrenzt wird. Ein größerer Strom könnte die LED zerstören. Auch sollten die Ströme der einzelnen Arduino-Pins auf 20 mA begrenzt werden. Höhere Stromwerte könnten den Arduino zerstören. Zur Strombegrenzung wird ein Widerstand mit  \( R=220\ \Omega \) verwendet. Die vollständige Schaltung ist unten abgebildet.</p>
 <blockquote>
 <p>Eine LED sollte niemals ohne Vorwiderstand an den Arduino angeschlossen werden! Dies könnte den Arduino und die LED zerstören.</p>
 </blockquote>
 <p><img src="../img/HelloWorld_LED.jpg" alt="drawing" width=380pt height=auto/></p>
-<h2><a class="anchor" aria-hidden="true" id="bestimmung-des-vorwiderstandes"></a><a href="#bestimmung-des-vorwiderstandes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bestimmung des Vorwiderstandes</h2>
-<p>Warum wird aber ein Widerstand von \( R=220 \Omega \) verwendet?</p>
-<p>Im Datenblatt einer LED findet sich meistens die UI-Kennlinie (<em>Forward Current vs. Forward Voltage</em>). Damit lässt sich ablesen, wie groß die Spannung (Vorwärtsspannung)) an der LED bei einem gegebenem Diodenstrom (Vorwärtsstrom) ist. Der abgebildeten (halblogarithmischen) Kennlinie einer roten LED (<a href="https://www.vishay.com/docs/83003/tldr5400.pdf">Vishay TLDR5400</a>) ist zu entnehmen, dass bei einem Diodenstrom von 20 mA die Diodenspannung ca. 1,85 V beträgt.</p>
-<p><img src="../img/LEDrot_SchaltungKennlinie.svg" alt="drawing" width=510pt height=auto/></p>
-<p>Mit Hilfe des Schaltbilds (<em>Abbildung rechts</em>) lässt sich folgende Maschengleichung aufstellen \( U_0 = U_R + U_D\). Da für \(U_R = I_D \cdot R_V\) gilt, lässt sich die Gleichung auch folgendermaßen schreiben
-$$ U_0 = I_D\cdot R_V + U_D$$
-und nach dem gesuchten Widerstand \(R\) umstellen:
-$$ R_V= \frac{U_0- U_D}{I_D} $$
-Mit den gegebenen Werten für die LED \( U_D = 1.85\ \text{V} \) und \( I=20\ \text{mA}\) folgt: $$ R= \frac{U_0 - U_D}{I}= \frac{5\ V - 1.85\ V}{20\ mA} = 157.5\ \Omega &lt; 220\ \Omega$$
-Ein Vorwiderstand von \(220 \Omega\) begrenzt somit den Diodenstrom auf unter 20 mA.</p>
-<blockquote>
-<p>Sollten in einer Schaltung mehrere LEDs verwendet werden, muss jede LED mit einem eigenen Widerstand verbunden werden.</p>
-</blockquote>
-<h3><a class="anchor" aria-hidden="true" id="aufgaben"></a><a href="#aufgaben" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aufgaben</h3>
-<div id="aufgabe">
-<ol>
-<li>Recherchieren Sie die üblichen Diodenspannungen \(U_D\) verschiedenfarbiger LEDs: a) rot,   b) gelb,   c) grün,   d) blau,   e) weiß.</li>
-<li>Bestimmen Sie für eine an 5V angeschlossene blaue LED den benötigten Vorwiderstand, damit ein Maximalstrom von 20 mA bei einer Spannung von 3,2 V nicht überschritten wird.</li>
-<li>Eine ultrahelle LED mit folgendem <a href="https://www.vishay.com/docs/83178/tlcr5800.pdf">Datenblatt</a> soll an eine Spannungsquelle mit 5 V angeschlossen werden. Bestimmen Sie den nötigen Vorwiderstand, damit die Stromaufnahme der LED 50 mA beträgt <em>[58 Ohm]</em>.</li>
-<li><strong>Zwei</strong> rote LEDs mit einer Diodenspannung von 2 V und einem Strom von 20 mA werden an 5 V angeschlossen. Zeichnen Sie die Schaltung mit Vorwiderstand. Bestimmen Sie außerdem den Wert des Vorwiderstandes  <em>[50 Ohm]</em>.</li>
-</ol>
-</div>
-<h2><a class="anchor" aria-hidden="true" id="blink-programm"></a><a href="#blink-programm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Blink-Programm</h2>
-<p>Ein Arduino-Programm besteht immer aus zwei Teilen, welche durch die beiden Funktionen <code>void setup()</code> und <code>void loop()</code> dargestellt werden.</p>
-<ul>
-<li>Die Funktion <code>void setup()</code> wird vom Arduino immer genau einmal ausgeführt und eignet sich damit besonders gut <strong>zum Konfigurieren</strong> des Boards. Hier kann zum Beispiel angegeben werden, ob ein Pin als Ein- oder Ausgang genutzt werden soll, oder ob eine <a href="seriell">serielle Kommunikation</a> zum PC aufgebaut werden soll.</li>
-<li>Die Fuktion <code>void loop()</code> wird, nachdem <code>setup()</code> ausgeführt wurde, wie eine Endlosschleife immer wieder aufgerufen. In aller Regel befindet sich hier das <strong>Hauptprogramm</strong>. Für das Beispiel der blinkenden LED wird hier immer wiederkehrend die LED erst an- und dann ausgeschaltet.</li>
-</ul>
-<pre><code class="hljs css language-Arduino"><span class="hljs-comment">/* Grundaufbau eines Arduino-Sketches (Programms)*/</span>
-
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> 
-</span>{
-  <span class="hljs-comment">/* Die setup() Funktion wird nur einmal durchlaufen und konfiguriert das Board.
-   * Hier werden z.B. Pins als Ein- oder Ausgänge definiert.
-   */</span>
-}
-
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> 
-</span>{
-  <span class="hljs-comment">/* Die loop() Funktion wird immer wieder ausgeführt und stellt eine Endlosschleife
-   * dar. In diesem Teil des Arduino-Programms befindet sich das Hauptprogramm.
-   */</span>
-}
-</code></pre>
-<blockquote>
-<p>Sollte eine der beiden Funktion <code>setup()</code> oder <code>loop()</code> für ein Programm nicht benötigt werden, so wird dessen Rumpf einfach leer gelassen. Sie dürfen <strong>niemals ganz weggelassen</strong> werden, da sonst Fehlermeldungen beim Kompilieren auftreten.</p>
-</blockquote>
-<p>Im folgenden Programmbeispiel wird eine LED mit einer Periodendauer von 2 Sekunden an- und ausgeschaltet. Die Erläuterungen zu den einzelnen Befehlen finden Sie im Anschluss.</p>
+<h3><a class="anchor" aria-hidden="true" id="blink-programm-zum-testen"></a><a href="#blink-programm-zum-testen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Blink-Programm zum Testen</h3>
+<p>Kopieren Sie  das folgende Programm in ein neues Arduino-Fenster. Unter <em>Werkzeuge/Board/</em> muss nun der Arduino Uno ausgewählt werden und unter <em>Werkzeuge/Port/</em> muss der, mit dem Arduino verbunden USB-Port ausgewählt werden. Anschließend können Sie ihr erstes Arduino-Programm hochladen.</p>
+<p>Wenn alles richtig gemacht wurde, sollte anschließen die LED mit einer Periodendauer von 2 Sekunden blinken.</p>
+<p><img src="../img/Arduino_Upload.png" alt="drawing" width=500pt height=auto/></p>
 <pre><code class="hljs css language-Arduino"><span class="hljs-comment">/* Die angeschlossene LED wird abwechselnd an- und ausgeschaltet.
 Durch den Befehl delay() ergibt sich eine blinkende LED.*/</span>
 
@@ -148,16 +84,43 @@ Durch den Befehl delay() ergibt sich eine blinkende LED.*/</span>
   <span class="hljs-built_in">delay</span>(<span class="hljs-number">1000</span>);                 <span class="hljs-comment">// </span>
 }
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="erläuterungen-zum-programm"></a><a href="#erläuterungen-zum-programm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Erläuterungen zum Programm</h3>
-<ul>
-<li><code>#define PIN_LED 9</code> definiert eine Konstante (Platzhalter), die nicht im Speicher abgelegt wird, sondern beim Kompilieren im Programmcode mit dessen Wert ersetzt wird. <strong>Die Zeile endet nicht mit einem Semikolon.</strong></li>
-<li><code>void setup(){...}</code> ist eine Funktion, welche beim Starten des Arduino-Sketches genau einmal ausgeführt wird.</li>
-<li>Die Funktion <code>void loop(){...}</code> wird in einer Endlosschleife ausgeführt.</li>
-<li>Zum Konfigurieren der Pins als Eingang bzw. Ausgang wird der Befehl <code>pinMode(pin,INPUT)</code> bzw. <code>pinMode(pin,OUTPUT)</code> verwendet.</li>
-<li>Wenn ein Pin als Ausgang definiert ist, kann mit dem Befehl <code>digitalWrite(pin,HIGH)</code> der entsprechende <code>pin</code> auf HIGH, also 5 V, gesetzt werden. Mit <code>digitalWrite(pin,LOW)</code> wird der Pin auf 0 V gesetzt.</li>
-<li>Der Befehl <code>delay(time_ms)</code> <strong>pausiert</strong> den Programmablauf um den angegebenen Wert in Millisekunden.</li>
-</ul>
-<h2><a class="anchor" aria-hidden="true" id="aufgaben-1"></a><a href="#aufgaben-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aufgaben</h2>
+<p>Dieses erste Arduino-Programm ist auch in der Arduino-Programmierumgebung ist unter <em>Datei/Beispiele/01.Basics/Blink</em> zu finden. Neben diesen einfachem Beispiel sind dort die auch viele andere Beispiele zu den verschiedensten Themen zu finden.</p>
+<h2><a class="anchor" aria-hidden="true" id="aufbau-eines-arduino-programms-am-beispiel-der-blinkenden-led"></a><a href="#aufbau-eines-arduino-programms-am-beispiel-der-blinkenden-led" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aufbau eines Arduino Programms am Beispiel der blinkenden LED</h2>
+<p>Ein Arduino-Programm besteht immer aus <strong>zwei Teilen</strong>, welche durch die beiden Funktionen <code>void setup()</code> und <code>void loop()</code> dargestellt werden.</p>
+<h3><a class="anchor" aria-hidden="true" id="void-setup"></a><a href="#void-setup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>void setup()</code></h3>
+<p>Die Funktion <code>void setup()</code> wird vom Arduino immer genau einmal ausgeführt und eignet sich damit besonders gut <strong>zum Konfigurieren</strong> des Boards. Hier kann zum Beispiel angegeben werden, ob ein Pin als Ein- oder Ausgang genutzt werden soll, oder ob eine <a href="seriell">serielle Kommunikation</a> zum PC aufgebaut werden soll.</p>
+<h3><a class="anchor" aria-hidden="true" id="void-loop"></a><a href="#void-loop" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>void loop()</code></h3>
+<p>Die Fuktion <code>void loop()</code> wird, nachdem <code>setup()</code> ausgeführt wurde, wie eine Endlosschleife immer wieder aufgerufen. In aller Regel befindet sich hier das <strong>Hauptprogramm</strong>. Für das Beispiel der blinkenden LED wird hier immer wiederkehrend die LED erst an- und dann ausgeschaltet.</p>
+<pre><code class="hljs css language-Arduino"><span class="hljs-comment">/* Grundaufbau eines Arduino-Sketches (Programms)*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> 
+</span>{
+  <span class="hljs-comment">/* Die setup() Funktion wird nur einmal durchlaufen und konfiguriert das Board.
+   * Hier werden z.B. Pins als Ein- oder Ausgänge definiert.
+   */</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> 
+</span>{
+  <span class="hljs-comment">/* Die loop() Funktion wird immer wieder ausgeführt und stellt eine Endlosschleife
+   * dar. In diesem Teil des Arduino-Programms befindet sich das Hauptprogramm.
+   */</span>
+}
+</code></pre>
+<blockquote>
+<p>Sollte eine der beiden Funktion <code>setup()</code> oder <code>loop()</code> für ein Programm nicht benötigt werden, so wird dessen Rumpf einfach leer gelassen. Sie dürfen <strong>niemals ganz weggelassen</strong> werden, da sonst Fehlermeldungen beim Kompilieren auftreten.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="define"></a><a href="#define" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>#define</code></h3>
+<p><code>#define PIN_LED 9</code> definiert eine Konstante (Platzhalter), die nicht im Speicher abgelegt wird, sondern beim Kompilieren im Programmcode mit dessen Wert ersetzt wird. <strong>Die Zeile endet nicht mit einem Semikolon.</strong></p>
+<h3><a class="anchor" aria-hidden="true" id="pinmode"></a><a href="#pinmode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>pinMode()</code></h3>
+<p>Zum Konfigurieren der Pins als Eingang bzw. Ausgang wird der Befehl <code>pinMode(pin,INPUT)</code> bzw. <code>pinMode(pin,OUTPUT)</code> verwendet. Jeder Pin, der verwendet wird, sollte in der <code>voiod setup()</code>-Funktion entsprechend der Funktion mit <code>pinMode()</code> konfiguriert werden.</p>
+<h3><a class="anchor" aria-hidden="true" id="digitalwrite"></a><a href="#digitalwrite" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>digitalWrite()</code></h3>
+<p>Wenn ein Pin als Ausgang definiert ist, kann mit dem Befehl <code>digitalWrite(pin,HIGH)</code> der entsprechende <code>pin</code> auf HIGH, also 5 V, gesetzt werden. Mit <code>digitalWrite(pin,LOW)</code> wird der Pin auf 0 V gesetzt.</p>
+<h3><a class="anchor" aria-hidden="true" id="delay"></a><a href="#delay" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>delay()</code></h3>
+<p>Der Befehl <code>delay(time_ms)</code> <strong>pausiert</strong> den Programmablauf um den angegebenen Wert in Millisekunden.</p>
+<p>Sollten weitere Fragen zu einzelnen Befehlen auftauchen ist die <a href="https://www.arduino.cc/reference/de/">Arduino-Referenz</a> die beste Anlaufstelle. Mit einem Rechts-Klick auf einen Befehl in der Arduino-Umgebung kann die Befehls-Referenz auch direkt aufgerufen werden.
+<img src="../img/ArduinoReferenz.png" alt="drawing" width=400pt height=auto/></p>
+<h3><a class="anchor" aria-hidden="true" id="aufgaben-programmieren"></a><a href="#aufgaben-programmieren" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aufgaben (Programmieren)</h3>
 <div id="aufgabe">
 <ol>
 <li>Ändern Sie die Periodendauer der LED auf 2 Sekunden. Innerhalb der 2 Sekunden soll die LED 90% der Zeit ausgeschaltet sein.</li>
@@ -166,6 +129,48 @@ Durch den Befehl delay() ergibt sich eine blinkende LED.*/</span>
 <li>Lassen Sie die zwei LEDs mit unterschiedlichen An- und Auszeiten blinken.</li>
 </ol>
 </div>
+<h2><a class="anchor" aria-hidden="true" id="wie-funktioniert-eine-led"></a><a href="#wie-funktioniert-eine-led" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Wie funktioniert eine LED?</h2>
+<p><img src="../img/LED_Aufbau.jpg" alt="drawing" width=510pt height=auto/></p>
+<h3><a class="anchor" aria-hidden="true" id="vorwiderstande-bestimmen"></a><a href="#vorwiderstande-bestimmen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vorwiderstande Bestimmen</h3>
+<p>Warum wird aber ein Widerstand von \( R=220 \Omega \) verwendet?</p>
+<p>Im Datenblatt einer LED findet sich meistens die UI-Kennlinie (<em>Forward Current vs. Forward Voltage</em>). Damit lässt sich ablesen, wie groß die Spannung (Vorwärtsspannung)) an der LED bei einem gegebenem Diodenstrom (Vorwärtsstrom) ist. Der abgebildeten (halblogarithmischen) Kennlinie einer roten LED (<a href="https://www.vishay.com/docs/83003/tldr5400.pdf">Vishay TLDR5400</a>) ist zu entnehmen, dass bei einem Diodenstrom von 20 mA die Diodenspannung ca. 1,85 V beträgt.</p>
+<p><img src="../img/LEDrot_SchaltungKennlinie.svg" alt="drawing" width=510pt height=auto/></p>
+<p>Mit Hilfe des Schaltbilds (<em>Abbildung rechts</em>) lässt sich folgende Maschengleichung aufstellen \( U_0 = U_R + U_D\). Da für \(U_R = I_D \cdot R_V\) gilt, lässt sich die Gleichung auch folgendermaßen schreiben
+$$ U_0 = I_D\cdot R_V + U_D$$
+und nach dem gesuchten Widerstand \(R\) umstellen:
+$$ R_V= \frac{U_0- U_D}{I_D} $$
+Mit den gegebenen Werten für die LED \( U_D = 1.85\ \text{V} \) und \( I=20\ \text{mA}\) folgt: $$ R= \frac{U_0 - U_D}{I}= \frac{5\ V - 1.85\ V}{20\ mA} = 157.5\ \Omega &lt; 220\ \Omega$$
+Ein Vorwiderstand von \(220 \Omega\) begrenzt somit den Diodenstrom auf unter 20 mA.</p>
+<blockquote>
+<p>Sollten in einer Schaltung mehrere LEDs verwendet werden, muss jede LED mit einem eigenen Widerstand verbunden werden.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="aufgaben-led"></a><a href="#aufgaben-led" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aufgaben (LED)</h3>
+<div id="aufgabe">
+<ol>
+<li>Recherchieren Sie die üblichen Diodenspannungen \(U_D\) verschiedenfarbiger LEDs: a) rot,   b) gelb,   c) grün,   d) blau,   e) weiß.</li>
+<li>Bestimmen Sie für eine an 5V angeschlossene blaue LED den benötigten Vorwiderstand, damit ein Maximalstrom von 20 mA bei einer Spannung von 3,2 V nicht überschritten wird.</li>
+<li>Eine ultrahelle LED mit folgendem <a href="https://www.vishay.com/docs/83178/tlcr5800.pdf">Datenblatt</a> soll an eine Spannungsquelle mit 5 V angeschlossen werden. Bestimmen Sie den nötigen Vorwiderstand, damit die Stromaufnahme der LED 50 mA beträgt <em>[58 Ohm]</em>.</li>
+<li><strong>Zwei</strong> rote LEDs mit einer Diodenspannung von 2 V und einem Strom von 20 mA werden an 5 V angeschlossen. Zeichnen Sie die Schaltung mit Vorwiderstand. Bestimmen Sie außerdem den Wert des Vorwiderstandes  <em>[50 Ohm]</em>.</li>
+</ol>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="bauteilliste"></a><a href="#bauteilliste" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bauteilliste</h2>
+<p>Für die meisten, der hier folgenden Beispiele zum Thema Arduino, werden nur relativ wenige Bauteile benötigt. Mit Ausnahme vom Abschnitt <a href="analogInput">Analoger Eingang</a> können alle Beispiel und Aufgaben mit den folgenden Bauteilen aufgebaut werden.</p>
+<table>
+<thead>
+<tr><th>Bauteil</th><th>Anzahl</th></tr>
+</thead>
+<tbody>
+<tr><td>Arduino (Uno)</td><td>1</td></tr>
+<tr><td>LED</td><td>6</td></tr>
+<tr><td>Taster</td><td>2</td></tr>
+<tr><td>Widerstand 220 Ohm</td><td>6</td></tr>
+<tr><td>Widerstand 20 kOhm</td><td>2</td></tr>
+<tr><td>Steckbrett (half size)</td><td>1</td></tr>
+<tr><td>Steckbrett (mini)</td><td>1</td></tr>
+<tr><td>Verbindungskabel</td><td>ca. 10</td></tr>
+<tr><td>weitere Bauteile nach Bedarf</td><td></td></tr>
+</tbody>
+</table>
 <h2><a class="anchor" aria-hidden="true" id="weiterführende-links"></a><a href="#weiterführende-links" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Weiterführende Links</h2>
 <p>Weitere Informationen zum Thema LEDs (Aufbau, Funktion, Schaltung, etc.) sind auf den folgenden Seiten zu finden:</p>
 <ul>
@@ -175,7 +180,7 @@ Durch den Befehl delay() ergibt sich eine blinkende LED.*/</span>
 <li><a href="https://www.electronics-tutorials.ws/de/dioden/leuchtdiode.html">Die Leuchtdiode</a></li>
 <li><a href="https://www.youtube.com/watch?v=Qlayua3yjuE">Everything about LEDs and current limiting resistors - GreatScott (Video)</a></li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/seriell"><span>Serielle Schnittstelle</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#bauteilliste">Bauteilliste</a></li><li><a href="#einfache-schaltung-für-eine-led">Einfache Schaltung für eine LED</a></li><li><a href="#bestimmung-des-vorwiderstandes">Bestimmung des Vorwiderstandes</a><ul class="toc-headings"><li><a href="#aufgaben">Aufgaben</a></li></ul></li><li><a href="#blink-programm">Blink-Programm</a><ul class="toc-headings"><li><a href="#erläuterungen-zum-programm">Erläuterungen zum Programm</a></li></ul></li><li><a href="#aufgaben-1">Aufgaben</a></li><li><a href="#weiterführende-links">Weiterführende Links</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/LogoSmallRed.svg" alt="Let&#x27;s rule the bots!  " width="66" height="58"/></a><div><a href="/blog">Blog</a><a href="https://www.youtube.com/watch?v=ARJ8cAGm6JE">HAL 9000</a></div><div><a href="http://www.osztiem.de/home/startseite/">OSZ TIEM</a></div></section><section class="copyright">Copyright © 2020 Stefan Warm</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/seriell"><span>Serielle Schnittstelle</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#einfache-schaltung-für-eine-led">Einfache Schaltung für eine LED</a><ul class="toc-headings"><li><a href="#blink-programm-zum-testen">Blink-Programm zum Testen</a></li></ul></li><li><a href="#aufbau-eines-arduino-programms-am-beispiel-der-blinkenden-led">Aufbau eines Arduino Programms am Beispiel der blinkenden LED</a><ul class="toc-headings"><li><a href="#void-setup"><code>void setup()</code></a></li><li><a href="#void-loop"><code>void loop()</code></a></li><li><a href="#define"><code>#define</code></a></li><li><a href="#pinmode"><code>pinMode()</code></a></li><li><a href="#digitalwrite"><code>digitalWrite()</code></a></li><li><a href="#delay"><code>delay()</code></a></li><li><a href="#aufgaben-programmieren">Aufgaben (Programmieren)</a></li></ul></li><li><a href="#wie-funktioniert-eine-led">Wie funktioniert eine LED?</a><ul class="toc-headings"><li><a href="#vorwiderstande-bestimmen">Vorwiderstande Bestimmen</a></li><li><a href="#aufgaben-led">Aufgaben (LED)</a></li></ul></li><li><a href="#bauteilliste">Bauteilliste</a></li><li><a href="#weiterführende-links">Weiterführende Links</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/LogoSmallRed.svg" alt="Let&#x27;s rule the bots!  " width="66" height="58"/></a><div><a href="/blog">Blog</a><a href="https://www.youtube.com/watch?v=ARJ8cAGm6JE">HAL 9000</a></div><div><a href="http://www.osztiem.de/home/startseite/">OSZ TIEM</a></div></section><section class="copyright">Copyright © 2020 Stefan Warm</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
