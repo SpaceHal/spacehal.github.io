@@ -62,9 +62,6 @@
 </blockquote>
 <p><img src="../img/HelloWorld_LED.jpg" alt="drawing" width=380pt height=auto/></p>
 <h3><a class="anchor" aria-hidden="true" id="blink-programm-zum-testen"></a><a href="#blink-programm-zum-testen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Blink-Programm zum Testen</h3>
-<p>Kopieren Sie  das folgende Programm in ein neues Arduino-Fenster. Unter <em>Werkzeuge/Board/</em> muss nun der Arduino Uno ausgewählt werden und unter <em>Werkzeuge/Port/</em> muss der, mit dem Arduino verbunden USB-Port ausgewählt werden. Anschließend können Sie ihr erstes Arduino-Programm hochladen.</p>
-<p>Wenn alles richtig gemacht wurde, sollte anschließen die LED mit einer Periodendauer von 2 Sekunden blinken.</p>
-<p><img src="../img/Arduino_Upload.png" alt="drawing" width=500pt height=auto/></p>
 <pre><code class="hljs css language-Arduino"><span class="hljs-comment">/* Die angeschlossene LED wird abwechselnd an- und ausgeschaltet.
 Durch den Befehl delay() ergibt sich eine blinkende LED.*/</span>
 
@@ -84,27 +81,26 @@ Durch den Befehl delay() ergibt sich eine blinkende LED.*/</span>
   <span class="hljs-built_in">delay</span>(<span class="hljs-number">1000</span>);                 <span class="hljs-comment">// </span>
 }
 </code></pre>
-<p>Dieses erste Arduino-Programm ist auch in der Arduino-Programmierumgebung ist unter <em>Datei/Beispiele/01.Basics/Blink</em> zu finden. Neben diesen einfachem Beispiel sind dort die auch viele andere Beispiele zu den verschiedensten Themen zu finden.</p>
+<p>Kopieren Sie  das abgebildete Programm in ein neues Arduino-Fenster und speichern Sie es unter dem Namen <code>blink</code>. Unter <em>Werkzeuge/Board/</em> muss nun der Arduino Uno ausgewählt werden und unter <em>Werkzeuge/Port/</em> muss der mit dem Arduino verbunden USB-Port festgelegt werden. Anschließend können Sie Ihr erstes Arduino-Programm hochladen.</p>
+<p><img src="../img/Arduino_Upload.png" alt="drawing" width=500pt height=auto/></p>
+<p>Wenn alles richtig gemacht wurde, sollte anschließend die LED mit einer Periodendauer von 2 Sekunden blinken.</p>
+<p>Dieses erste Arduino-Programm ist auch in der Arduino-Programmierumgebung ist unter <em>Datei/Beispiele/01.Basics/Blink</em> zu finden. Neben diesen einfachem Beispiel sind dort auch viele andere Beispiele zu den verschiedensten Themen zu finden.</p>
 <h2><a class="anchor" aria-hidden="true" id="aufbau-eines-arduino-programms-am-beispiel-der-blinkenden-led"></a><a href="#aufbau-eines-arduino-programms-am-beispiel-der-blinkenden-led" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aufbau eines Arduino Programms am Beispiel der blinkenden LED</h2>
 <p>Ein Arduino-Programm besteht immer aus <strong>zwei Teilen</strong>, welche durch die beiden Funktionen <code>void setup()</code> und <code>void loop()</code> dargestellt werden.</p>
 <h3><a class="anchor" aria-hidden="true" id="void-setup"></a><a href="#void-setup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>void setup()</code></h3>
-<p>Die Funktion <code>void setup()</code> wird vom Arduino immer genau einmal ausgeführt und eignet sich damit besonders gut <strong>zum Konfigurieren</strong> des Boards. Hier kann zum Beispiel angegeben werden, ob ein Pin als Ein- oder Ausgang genutzt werden soll, oder ob eine <a href="seriell">serielle Kommunikation</a> zum PC aufgebaut werden soll.</p>
+<p>Die Funktion <code>void setup()</code> wird vom Arduino nach dem Starten genau einmal ausgeführt. Damit ist sie besonders <strong>zum Konfigurieren</strong> des Boards geeignet. Hier kann zum Beispiel angegeben werden, ob ein Pin als Ein- oder Ausgang genutzt werden soll, oder ob eine <a href="seriell">serielle Kommunikation</a> zum PC aufgebaut werden soll.</p>
 <h3><a class="anchor" aria-hidden="true" id="void-loop"></a><a href="#void-loop" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>void loop()</code></h3>
-<p>Die Fuktion <code>void loop()</code> wird, nachdem <code>setup()</code> ausgeführt wurde, wie eine Endlosschleife immer wieder aufgerufen. In aller Regel befindet sich hier das <strong>Hauptprogramm</strong>. Für das Beispiel der blinkenden LED wird hier immer wiederkehrend die LED erst an- und dann ausgeschaltet.</p>
+<p>Die Fuktion <code>void loop()</code> wird, nachdem <code>setup()</code> ausgeführt wurde, wie eine Endlosschleife immer wieder aufgerufen. In der Regel befindet sich hier das <strong>Hauptprogramm</strong>. Für das Beispiel der blinkenden LED wird hier immer wiederkehrend die LED erst an- und dann ausgeschaltet.</p>
 <pre><code class="hljs css language-Arduino"><span class="hljs-comment">/* Grundaufbau eines Arduino-Sketches (Programms)*/</span>
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> 
 </span>{
-  <span class="hljs-comment">/* Die setup() Funktion wird nur einmal durchlaufen und konfiguriert das Board.
-   * Hier werden z.B. Pins als Ein- oder Ausgänge definiert.
-   */</span>
+  <span class="hljs-comment">/* Die setup() Funktion wird nur einmal durchlaufen und konfiguriert das Board. */</span>
 }
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> 
 </span>{
-  <span class="hljs-comment">/* Die loop() Funktion wird immer wieder ausgeführt und stellt eine Endlosschleife
-   * dar. In diesem Teil des Arduino-Programms befindet sich das Hauptprogramm.
-   */</span>
+  <span class="hljs-comment">/* Die loop() Funktion wird immer wieder ausgeführt und stellt eine Endlosschleife dar. */</span>
 }
 </code></pre>
 <blockquote>
