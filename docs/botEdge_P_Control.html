@@ -63,8 +63,8 @@
 <span class="hljs-comment">// speed &gt; 0: Rechtskurve</span>
 <span class="hljs-comment">// speed &lt; 0: Linkskurve</span>
 
-leftSpeed  = <span class="hljs-symbol">speed</span> + deltaSpeed  <span class="hljs-comment">// Drehzahl linkes Rad</span>
-rightSpeed = <span class="hljs-symbol">speed</span> - deltaSpeed  <span class="hljs-comment">// Drehzahl rechtes Rad</span>
+leftSpeed  = speed + deltaSpeed  <span class="hljs-comment">// Drehzahl linkes Rad</span>
+rightSpeed = speed - deltaSpeed  <span class="hljs-comment">// Drehzahl rechtes Rad</span>
 </code></pre>
 <p>Die <strong>Geschwindigkeitsänderung</strong> der  Motordrehzahl \( \Delta \text{Speed} \)  lässt sich mit einem Proportionalitätsfaktor \( k_p \) aus dem Fehlerwert bestimmen:
 $$ \Delta \text{Speed} = k_p \cdot e $$.</p>
@@ -85,14 +85,14 @@ Kp        = <span class="hljs-number">0.3</span>   <span class="hljs-comment">//
 speed     = <span class="hljs-number">100</span>   <span class="hljs-comment">// Richtwert für die Motordrehzahl (Normwert)</span>
 
 wiederhole
-    sensorWert = lese<span class="hljs-constructor">IRLicht()</span>
+    sensorWert = leseIRLicht()
     e = wertKante - sensorWert       <span class="hljs-comment">// Fehlerwert, Regeldifferenz</span>
-    deltaSpeed = Kp<span class="hljs-operator"> * </span>e              <span class="hljs-comment">// Geschwindigkeitsänderung</span>
+    deltaSpeed = Kp * e              <span class="hljs-comment">// Geschwindigkeitsänderung</span>
     leftSpeed  = speed + deltaSpeed  <span class="hljs-comment">// Drehzahl linkes Rad</span>
     rightSpeed = speed - deltaSpeed  <span class="hljs-comment">// Drehzahl rechtes Rad</span>
     begrenze(leftSpeed)              <span class="hljs-comment">// Werte dürfen nur in einem bestimmten ...</span>
     begrenze(rightSpeed)             <span class="hljs-comment">// Wertebereich liegen (z.B. 0 ... 127)</span>
-    set<span class="hljs-constructor">Motors(<span class="hljs-params">leftSpeed</span>,<span class="hljs-params">rightSpeed</span>)</span>  <span class="hljs-comment">// Aktualisieren der Motordrehzahlen</span>
+    setMotors(leftSpeed,rightSpeed)  <span class="hljs-comment">// Aktualisieren der Motordrehzahlen</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="werte-begrenzen-mit-constrain"></a><a href="#werte-begrenzen-mit-constrain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Werte begrenzen mit <code>constrain()</code></h3>
 <p>In vielen Fällen ist es sinnvoll, die Werte von <code>leftSpeed</code> und <code>rightSpeed</code> zu begrenzen. Hierfür eignet sich die Arduino-Funktion:</p>
