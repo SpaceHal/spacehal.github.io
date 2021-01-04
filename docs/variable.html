@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Programmiertechniken - Variablen · Let&#x27;s rule the bots!  </title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="In der Informatik sind **Variablen** eine Art Platzhalter oder Container für Daten und Informationen. Der Inhalt einer Variablen kann sich jederzeit ändern. Um eine Variable nutzen zu können, muss im Programmcode für jede Variable der **Variablenname** und der **Datentyp** (ob es sich um einen Text, Zahl, Buchstabe, etc. handelt) festgelegt werden. Diese Festlegung der Eigenschaften einer Variablen wird **Deklaration** bzw. **Variablendeklaration** genannt (von [*declarare*](https://de.langenscheidt.com/latein-deutsch/declarare) lat. bekannt machen, bezeichnen)."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Programmiertechniken - Variablen · Let&#x27;s rule the bots!  "/><meta property="og:type" content="website"/><meta property="og:url" content="https://spacehal.github.io/"/><meta property="og:description" content="In der Informatik sind **Variablen** eine Art Platzhalter oder Container für Daten und Informationen. Der Inhalt einer Variablen kann sich jederzeit ändern. Um eine Variable nutzen zu können, muss im Programmcode für jede Variable der **Variablenname** und der **Datentyp** (ob es sich um einen Text, Zahl, Buchstabe, etc. handelt) festgelegt werden. Diese Festlegung der Eigenschaften einer Variablen wird **Deklaration** bzw. **Variablendeklaration** genannt (von [*declarare*](https://de.langenscheidt.com/latein-deutsch/declarare) lat. bekannt machen, bezeichnen)."/><meta property="og:image" content="https://spacehal.github.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://spacehal.github.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/LogoSmallRed.svg"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"/><link rel="alternate" type="application/atom+xml" href="https://spacehal.github.io/blog/atom.xml" title="Let&#x27;s rule the bots!   Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://spacehal.github.io/blog/feed.xml" title="Let&#x27;s rule the bots!   Blog RSS Feed"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,600"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,300i,400,400i,500,600"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script><script type="text/javascript" src="/js/load-mathjax_v2.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/LogoSmallRed.svg" alt="Let&#x27;s rule the bots!  "/><h2 class="headerTitleWithLogo">Let&#x27;s rule the bots!  </h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/helloworld" target="_self">Arduino</a></li><li class=""><a href="/docs/botBeginning" target="_self">Robotik</a></li><li class=""><a href="/docs/zumoInstallation" target="_self">Zumo</a></li><li class=""><a href="/docs/moreInfo" target="_self">Links</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Grundlagen</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Grundlagen<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/helloworld">Blinkende LED</a></li><li class="navListItem"><a class="navItem" href="/docs/seriell">Serielle Schnittstelle</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/variable">Variablen</a></li><li class="navListItem"><a class="navItem" href="/docs/loop">Schleifen</a></li><li class="navListItem"><a class="navItem" href="/docs/input">Taster und if-Verzweigung</a></li><li class="navListItem"><a class="navItem" href="/docs/arryAndFunc">Arrays und Funktionen</a></li><li class="navListItem"><a class="navItem" href="/docs/millis">Zeitkritische Aufgaben</a></li><li class="navListItem"><a class="navItem" href="/docs/debounce">Einen Taster entprellen</a></li><li class="navListItem"><a class="navItem" href="/docs/stateMachine">Endliche Automaten</a></li><li class="navListItem"><a class="navItem" href="/docs/pwm">PWM Signal</a></li><li class="navListItem"><a class="navItem" href="/docs/analogInput">Analoger Eingang</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Motoren<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/motorWieEsBegann">Wie es begann</a></li><li class="navListItem"><a class="navItem" href="/docs/motorBasics">Grundlagen Gleichstrommotor</a></li><li class="navListItem"><a class="navItem" href="/docs/motorHBridge">H-Brücke</a></li><li class="navListItem"><a class="navItem" href="/docs/motorDRV8833">Motortreiber DRV8833</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Sensorik<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/irSensor">IR Sensor</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Programmiertechniken - Variablen</h1></header><article><div><span><p>In der Informatik sind <strong>Variablen</strong> eine Art Platzhalter oder Container für Daten und Informationen. Der Inhalt einer Variablen kann sich jederzeit ändern. Um eine Variable nutzen zu können, muss im Programmcode für jede Variable der <strong>Variablenname</strong> und der <strong>Datentyp</strong> (ob es sich um einen Text, Zahl, Buchstabe, etc. handelt) festgelegt werden. Diese Festlegung der Eigenschaften einer Variablen wird <strong>Deklaration</strong> bzw. <strong>Variablendeklaration</strong> genannt (von <a href="https://de.langenscheidt.com/latein-deutsch/declarare"><em>declarare</em></a> lat. bekannt machen, bezeichnen).</p>
+<h2><a class="anchor" aria-hidden="true" id="variablenname"></a><a href="#variablenname" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Variablenname</h2>
+<p>Der <strong>Variablenname</strong> soll immer beschreiben, welche Funktion oder welchen Inhalt eine Variable hat. Es ist sinnvoll, für Variablen Begriffe wie <code>wertSensorLinks</code> oder <code>pinRoteLED</code> zu verwenden.</p>
+<p>Variablennamen sollten immer mit einem Kleinbuchstaben beginnen. Die Nutzung eines Unterstrichs zum Trennen einzelner Wörter sollte vermieden werden. Stattdessen kann zur verbesserten Lesbarkeit bei zusammengesetzten  Wörtern die Großschreibung verwendet werden. Statt <code>zustand_motor_links</code> sollte die Variable besser <code>zustandMotorLinks</code> genannt werden.</p>
+<h2><a class="anchor" aria-hidden="true" id="datentyp"></a><a href="#datentyp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Datentyp</h2>
+<p>Variablen können für viele verschiedene Datentypen festgelegt werden. Der <strong>Datentyp</strong> gibt an, ob die Variable z.B. Zahlen oder Buchstaben beinhalten kann.</p>
+<p>Die wichtigsten Datentypen beim Arduino:</p>
+<ul>
+<li><code>bool</code>: Speichert nur die <strong>logischen Zustände</strong> bzw. Werte <code>true</code> (1) oder <code>false</code> (0), also wahr oder falsch ab.</li>
+<li><code>char</code>: Zum Speichern <strong>einzelner Buchstabe</strong>n wird der Datentyp <code>char</code> verwendet.</li>
+<li><code>int</code> und <code>long</code>: Gelten für <strong>ganzahlige Werte</strong>, wobei <code>int</code> einen deutlich kleineren Wertebereich hat (-32.768 bis 32.767)</li>
+<li><code>unsigned int</code> und <code>unsigned long</code>: Ähnlich wie <code>int</code> und <code>long</code>, allerdings können nur <strong>positive ganzzahlige Werte</strong> gesspeichert werden. Dadurch verdoppelt sich der Wertebereich der positiven Zahlen.</li>
+<li><code>float</code> und <code>double</code>: Werden für <strong>Fließkommazahlen</strong> (als Dezimalbrüche mit festgelegter Genauigkeit) verwendet. <code>double</code> weißt ein deutliche höhere Genauigkeit auf, benötigt allerddings auch dppelt soviel Speicher wie <code>float</code>.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="zusammenfassung-einiger-datentypen"></a><a href="#zusammenfassung-einiger-datentypen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Zusammenfassung einiger Datentypen</h3>
+<p>Die Größe der aufgelisteten Datentypen gilt nur bei einigen Arduino-Boards (Arduino-Uno, Arduino-Nano, ...s)</p>
+<table>
+<thead>
+<tr><th>Datentyp</th><th style="text-align:center">kleinster Wert</th><th style="text-align:center">größter Wert</th><th style="text-align:center">Größe in Bit</th><th style="text-align:center">Anmerkungen</th></tr>
+</thead>
+<tbody>
+<tr><td><code>boolean</code></td><td style="text-align:center">false (0)</td><td style="text-align:center">true (1)</td><td style="text-align:center">8</td><td style="text-align:center"></td></tr>
+<tr><td><code>int</code></td><td style="text-align:center">-32.768</td><td style="text-align:center">32.767</td><td style="text-align:center">16</td><td style="text-align:center"></td></tr>
+<tr><td><code>unsigned int</code></td><td style="text-align:center">0</td><td style="text-align:center">65535</td><td style="text-align:center">16</td><td style="text-align:center"><em>nur positive Werte</em></td></tr>
+<tr><td><code>long</code></td><td style="text-align:center">-2.147.483.648</td><td style="text-align:center">2.147.483.647</td><td style="text-align:center">32</td><td style="text-align:center"></td></tr>
+<tr><td><code>unsigned long</code></td><td style="text-align:center">0</td><td style="text-align:center">4.294.967.295</td><td style="text-align:center">32</td><td style="text-align:center"><em>nur positive Werte</em></td></tr>
+<tr><td><code>float</code></td><td style="text-align:center">3,4E-38</td><td style="text-align:center">3,4E+38</td><td style="text-align:center">32</td><td style="text-align:center"><em>Fließkommazahlen</em></td></tr>
+<tr><td><code>double</code></td><td style="text-align:center">1,7E-308</td><td style="text-align:center">1,7E+308</td><td style="text-align:center">64</td><td style="text-align:center"><em>Fließkommazahlen</em></td></tr>
+</tbody>
+</table>
+<p>Oft werden auch <a href="https://de.wikibooks.org/wiki/C-Programmierung_mit_AVR-GCC/_Datentypen">alternative Datentypen</a> benutzt, die die Kompatibilität  mit verschiedenen Mikrocontrollern verbessern sollen:</p>
+<ul>
+<li><code>uint8_t</code> , <code>uint16_t</code>, <code>uint32_t</code>, <code>uint64_t</code>: Speichern positive ganzzahlige Werte mit der angegeben Bitbreite (8, 16, 32, 64 bit)</li>
+<li><code>int8_t</code> , <code>int16_t</code>, <code>int32_t</code>, <code>int64_t</code>: Speichert positive und negative ganzzahlige Werte mit der angegeben Bitbreite (8, 16, 32, 64 bit)</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="beispiele-deklaration"></a><a href="#beispiele-deklaration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiele Deklaration</h3>
+<pre><code class="hljs css language-Arduino"><span class="hljs-keyword">int</span> pinRoteLed;   <span class="hljs-comment">// Die Variable mit dem Namen pinRoteLed kann nur ganzzahlige Werte annehmen</span>
+<span class="hljs-keyword">float</span> fehlerwert; <span class="hljs-comment">// Die Variable mit dem Namen fehlerwert kann auch eine Fließkommazahl (Dezimalbruch) sein.</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="zuweisung-und-initialisierung"></a><a href="#zuweisung-und-initialisierung" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Zuweisung und Initialisierung</h2>
+<p>Nachdem eine Variable <strong>deklariert</strong> wurde, ist es möglich, ihr auch einen <strong>Wert zuzuweisen</strong>. Zuweisungen werden mit dem <code>=</code> Operator durchgeführt. Auch wenn es nicht immer ganz offensichtlich ist, sollte der  <code>=</code> Operator nicht mit dem Gleichheitszeichen (=) in der Mathematik verwechselt werden. Das Gleichheitszeichen drückt aus, dass etwas <strong>gleich ist</strong>. Der Zuweisungs-Operator <strong>weist</strong> der Variablen einen Wert <strong>zu</strong>. Dieser Unterschied wird später wichtig, wenn Vergleichsoperatoren wie zum Beispiel <code>==</code> verwendet werden.</p>
+<p>Zuweisungen können getrennt von der Variablendeklaration durchgeführt werden. Wird einer Variablen das erste Mal ein Wert zugewiesen, spricht man auch von der <strong>Initialisierung</strong> der Variablen. Bevor eine Variable initialisiert wurde,  ist der Wert der Variablen unbekannt.</p>
+<pre><code class="hljs css language-Arduino"><span class="hljs-keyword">int</span> auszeitRoteLed;    <span class="hljs-comment">// Variablendeklaration (Wert der Variable ist unbekannt)</span>
+auszeitRoteLed = <span class="hljs-number">1000</span>; <span class="hljs-comment">// Zuweisung und Initialisierung</span>
+
+auszeitRoteLed = <span class="hljs-number">300</span>;  <span class="hljs-comment">// eine erneute Zuweisung überschreibt die Variable mit einem neuen Wert</span>
+</code></pre>
+<p>Da jede Variable deklariert und auch initialisiert werden muss, kann das auch in einer Programmzeile gemacht werden.</p>
+<pre><code class="hljs css language-Arduino"><span class="hljs-keyword">float</span> fehlerWert  = <span class="hljs-number">3.1415</span>; <span class="hljs-comment">// Deklaration und erst Zuweisung, also Initialisierung in einer Zeile.</span>
+<span class="hljs-keyword">int</span> pinLED        = <span class="hljs-number">12</span>;     <span class="hljs-comment">// Initialisierung eines Integer-Wertes</span>
+<span class="hljs-keyword">char</span> einBuchstabe = `b`;    <span class="hljs-comment">// Initialisierung eines char-Datentypes.</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="einfache-rechenoperationen"></a><a href="#einfache-rechenoperationen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Einfache Rechenoperationen</h2>
+<p>Mit Variablen können nicht nur Werte gespeichert werden, sondern mit ihnen können auch verschiedene Rechnoperationen (z.B. Adition <code>+</code>, Subtraktion <code>-</code>, Mulitplikation <code>*</code>, Division <code>/</code>) durchgeführt werden.</p>
+<pre><code class="hljs css language-Arduino"><span class="hljs-keyword">int</span> a = <span class="hljs-number">6</span>;
+<span class="hljs-keyword">int</span> b = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">int</span> c;
+
+c = a - b; <span class="hljs-comment">//  c: 3</span>
+c = a + b; <span class="hljs-comment">//  c: 9</span>
+c = a * b; <span class="hljs-comment">//  c: 18</span>
+c = a / b; <span class="hljs-comment">//  c: 2</span>
+</code></pre>
+<p>Nicht immer soll das Ergbenis einer Rechenoperation in einer <em>neuen</em> Variable gespeichert werden. In diesem Fall kann das Ergebnis auch direkt den alten Wert der Variablen überschreiben.</p>
+<pre><code class="hljs css language-Arduino"><span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;
+i = i + <span class="hljs-number">1</span>; <span class="hljs-comment">// i: 2</span>
+
+<span class="hljs-keyword">int</span> a = <span class="hljs-number">6</span>;
+i = i + <span class="hljs-number">6</span>; <span class="hljs-comment">// i: 2 + 6 = 8</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="gültigkeitsbreich-scope"></a><a href="#gültigkeitsbreich-scope" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Gültigkeitsbreich (Scope)</h2>
+<p>Kann auf eine Variable im gesamten Programm zu gegriffen werden, handelt es sich um eine <strong>globale Variable</strong>. Existiert eine Variabel nur in Teilen des Programms, handelt es sich um <strong>lokale Variablen</strong></p>
+<p>Ob ein Variable global oder lokal ist, hängt davon ab, wo sie deklariert wurde.</p>
+<h4><a class="anchor" aria-hidden="true" id="lokale-variablen"></a><a href="#lokale-variablen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lokale Variablen</h4>
+<p>Variablen, die in einem Programmabschnitt deklariert wurden, der durch zwei geschweifte Klammern <code>{ ... }</code> begrenzt ist, sind lokale Variablen. Bisher kennen sie nur die <code>void loop()</code> bzw. <code>void setup()</code> Funktionen, welche einen durch geschweifte Klammern begrenzten Bereich aufweisen. Deklarieren Sie also eine Variable innerhalb dieser Funktionen, existieren Sie auch nur innerhalb dieser Funktionen. Wird die Funktion beendet, verschwindet auch die Variable.</p>
+<p>Lokale Variablen sollten immer mit einem kleinen <code>l</code> beginen: <code>lMessWert</code>, <code>lZaehler</code>.</p>
+<h4><a class="anchor" aria-hidden="true" id="globale-variablen"></a><a href="#globale-variablen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Globale Variablen</h4>
+<p>Wird eine Variable außerhalb von geschweiften Klammern <code>{ ... }</code> deklariert, so ist die Variable global. Sie wird solange existieren, wie das Programm läuft und es kann aus dem gesamten Programmcode darauf zugegriffen werden.</p>
+<h3><a class="anchor" aria-hidden="true" id="beispiel"></a><a href="#beispiel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiel</h3>
+<pre><code class="hljs css language-Arduino"><span class="hljs-keyword">int</span> pinLed = <span class="hljs-number">12</span>; <span class="hljs-comment">// globale Variable</span>
+<span class="hljs-keyword">int</span> zaehlerGlobal = <span class="hljs-number">0</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span></span>{ <span class="hljs-comment">// Geschweifte Klammern geben einen Gültigkeitsbereich (Scope) an.</span>
+  <span class="hljs-keyword">int</span> lZahlerSetup = <span class="hljs-number">0</span>;    <span class="hljs-comment">// Lokale Variable</span>
+  <span class="hljs-built_in">pinMode</span>(pinLed,<span class="hljs-literal">OUTPUT</span>); <span class="hljs-comment">// kann die globale Variable pinLed nutzen</span>
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">begin</span>(<span class="hljs-number">9600</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span></span>{ 
+  <span class="hljs-keyword">int</span> lZahlerLoop = <span class="hljs-number">0</span>;
+
+  zaehlerGlobal  = zaehlerGlobal + <span class="hljs-number">1</span>;
+  <span class="hljs-comment">//lZahlerSetup   = lZahlerSetup  + 1;  // FEHLER: zahlerSetup existiert hier nicht</span>
+  lZahlerLoop    = lZahlerLoop   + <span class="hljs-number">1</span>;
+
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">"zaehlerGlobal: "</span>);
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(zaehlerGlobal);           <span class="hljs-comment">// zaehlerGlobal: 1, 2, 3, ...</span>
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">", lZahlerLoop: "</span>);
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span>(lZahlerLoop);           <span class="hljs-comment">// lZahlerLoop:   1, 1, 1, ... (lZahlerLoop wird immer wieder neu initialisiert.)</span>
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="aufgaben"></a><a href="#aufgaben" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aufgaben</h2>
+<div id="aufgabe">
+<ol>
+<li>Erläutern Sie den Unterschied zwischen einer <strong>Deklaration</strong>, einer <strong>Zuweisung</strong> und ein <strong>Initialisierung</strong> einer Variablen. Geben Sie jeweils ein Beispiel an.</li>
+<li>Mit welchen Datentypen lässt sich die Zahl <code>42465</code> speichern.</li>
+<li>Lassen Sie mit dem seriellen Monitor und <code>Serial.println()</code> fortlaufend alle durch 8 teilbaren Zahlen ausgeben.</li>
+</ol>
+</div>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/seriell"><span class="arrow-prev">← </span><span>Serielle Schnittstelle</span></a><a class="docs-next button" href="/docs/loop"><span>Schleifen</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#variablenname">Variablenname</a></li><li><a href="#datentyp">Datentyp</a><ul class="toc-headings"><li><a href="#zusammenfassung-einiger-datentypen">Zusammenfassung einiger Datentypen</a></li><li><a href="#beispiele-deklaration">Beispiele Deklaration</a></li></ul></li><li><a href="#zuweisung-und-initialisierung">Zuweisung und Initialisierung</a></li><li><a href="#einfache-rechenoperationen">Einfache Rechenoperationen</a></li><li><a href="#gültigkeitsbreich-scope">Gültigkeitsbreich (Scope)</a><ul class="toc-headings"><li><a href="#beispiel">Beispiel</a></li></ul></li><li><a href="#aufgaben">Aufgaben</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/LogoSmallRed.svg" alt="Let&#x27;s rule the bots!  " width="66" height="58"/></a><div><a href="/blog">Blog</a><a href="https://www.youtube.com/watch?v=ARJ8cAGm6JE">HAL 9000</a></div><div><a href="http://www.osztiem.de/home/startseite/">OSZ TIEM</a></div></section><section class="copyright">Copyright © 2021 Stefan Warm</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '8a8e0b313860e2fe23d0d40ec6dcd649',
+                indexName: 'spacehal',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
