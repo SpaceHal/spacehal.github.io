@@ -1,0 +1,1 @@
+(self.webpackChunkspace_hal_2=self.webpackChunkspace_hal_2||[]).push([[7095],{6353:function(e){"use strict";e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/blog/welcome"},{"title":"Hello","permalink":"/blog/hello-world"},{"title":"Hola","permalink":"/blog/hola"}]}')}}]);

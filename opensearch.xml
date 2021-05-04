@@ -7,5 +7,5 @@
   <Image width="16" height="16" type="image/x-icon">https://spacehal.github.io/img/LogoSmallRed.svg</Image>
   <Url type="text/html" method="get" template="https://spacehal.github.io//search?q={searchTerms}"/>
   <Url type="application/opensearchdescription+xml" rel="self" template="https://spacehal.github.io//opensearch.xml" />
-  <moz:SearchForm>https://spacehal.github.io/</moz:SearchForm>
+  <moz:SearchForm>https://spacehal.github.io//</moz:SearchForm>
 </OpenSearchDescription>
