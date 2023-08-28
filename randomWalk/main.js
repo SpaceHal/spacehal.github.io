@@ -43,7 +43,7 @@ function draw() {
   histo.show();
   //textStyle(NORMAL);
   textSize(15);
-  fill(100);
+  fill(20);
   textAlign(LEFT)
   text('Random Walk 2D',20 ,20)
   text('(Irrfahrt)',20 ,40)
