@@ -29,18 +29,7 @@ function setup() {
 
 }
 
-
-function draw() {
-  //clear();
-  background(50);
-  //rect(0,0,width, height);
-
-  walker.update();
-  if (walker.drawn) {
-    //print(walker.endY);
-    histo.getValue(walker.endY);
-  }
-  histo.show();
+function showText(){
   //textStyle(NORMAL);
   textSize(15);
   fill(20);
@@ -54,8 +43,21 @@ function draw() {
   textSize(13);
   textAlign(LEFT)
   fill(150);
-  text("Klicken für Neustart",20 ,360)
+  text("'c' - Löschen",20 ,360)
   text("'p' - Pause",20 ,380)
+}
+
+
+function draw() {
+  //background(50);
+
+  walker.update();
+  if (walker.drawn) {
+    histo.getValue(walker.endY);
+  }
+  histo.show();
+  showText();
+
 }
 
 function keyPressed() {
@@ -68,15 +70,22 @@ function keyPressed() {
       active = true
     }
   } 
+  if (key === 'c') {
+    walker.reset();
+    histo.reset();
+    draw();
+  } 
 }
 
 function mousePressed(){
-  walker.reset();
-  histo.reset();
+
   if (active) {
+    walker.reset();
+    histo.reset();
     loop();
     active = true
   } else {
+    draw()
     noLoop();
     active = false
   }

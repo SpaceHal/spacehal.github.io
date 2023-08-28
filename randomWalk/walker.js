@@ -26,8 +26,8 @@ class RandomWalker {
         this.restart();
 
         // animation 
-        this.animationTime = 200;// in ms
-        this.lastUpdate  = 0; 
+        //this.animationTime = 200;// in ms
+        //this.lastUpdate  = 0; 
     }
 
     drawCoSys() {
