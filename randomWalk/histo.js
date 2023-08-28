@@ -8,9 +8,9 @@ class Histogram {
         this.hist       = Array(this.bins);
         this.yOffset    = 10;  // y-axis offset
         this.margin     = 3;  // margin between plotted bins
-        this.pgX        = 540;
-        this.pgY        = 2;
-        this.pgHeight   = 416;
+        this.pgX        = 450;
+        this.pgY        = 0;
+        this.pgHeight   = 400;
         this.pgWidth    = 150;
         this.pgH        = createGraphics(this.pgWidth, this.pgHeight);
 

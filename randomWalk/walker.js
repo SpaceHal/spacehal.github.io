@@ -1,11 +1,11 @@
 class RandomWalker {
     constructor() {
-        this.pgHeight = 416;
-        this.pgWidth = 530;
-        this.pgX = 10;
-        this.pgY = 2;
+        this.pgHeight = 400;
+        this.pgWidth = 450;
+        this.pgX = 0;
+        this.pgY = 0;
         this.xMin = 20;
-        this.xMax = 500;
+        this.xMax = 430;
         this.dx = 2;
         this.yBase = this.pgHeight/2;
         //this.xBaseHist = 550;

@@ -17,7 +17,7 @@ function setup() {
   walker = new RandomWalker();
   histo = new Histogram();
   frameRate(50);
-  createCanvas(700, 420);
+  createCanvas(600, 400);
   background(50);
   noFill();
   noStroke();
@@ -42,15 +42,20 @@ function draw() {
   }
   histo.show();
   //textStyle(NORMAL);
+  textSize(15);
   fill(100);
-  textAlign(RIGHT)
-  text('Random Walk 2D (Irrfahrt)',510 ,405)
   textAlign(LEFT)
-  text('absolute Häufigkeit',545 ,405)
+  text('Random Walk 2D',20 ,20)
+  text('(Irrfahrt)',20 ,40)
+  textAlign(RIGHT)
+  text('absolute',590 ,20)
+  text('Häufigkeit',590 ,40)
 
+  textSize(13);
   textAlign(LEFT)
   fill(150);
-  text("'p' - Pause",20 ,405)
+  text("Klicken für Neustart",20 ,360)
+  text("'p' - Pause",20 ,380)
 }
 
 function keyPressed() {
