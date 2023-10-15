@@ -40,7 +40,7 @@ function showText(){
   textSize(13);
   textAlign(LEFT)
   fill(150);
-  text("'k' - kontinuierlich",20 ,340)
+  text("'a' - animieren",20 ,340)
   text("'l' - löschen",20 ,360)
   text("mit Mauseklick hinzufügen",20 ,380)
 
@@ -66,7 +66,7 @@ function draw() {
 }
 
 function keyPressed() {
-  if (key === 'k') {
+  if (key === 'a') {
     if (active) {
       noLoop();
       active = false
