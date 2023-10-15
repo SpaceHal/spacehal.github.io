@@ -15,8 +15,8 @@ class RandomWalker {
         this.pgW  = createGraphics(this.pgWidth, this.pgHeight);
         this.pgW.background(255);
         this.pgW.noFill();
-        this.pgW.stroke(0,0,0,15);
-        this.pgW.strokeWeight(2)
+        this.pgW.stroke(0,0,0,150);
+        this.pgW.strokeWeight(1)
         //this.pgW.blendMode(DIFFERENCE);
 
         this.pgCS = createGraphics(this.pgWidth, this.pgHeight);

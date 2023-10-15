@@ -1,14 +1,11 @@
 /// <reference path="../TSDef/p5.global-mode.d.ts" />
 // top line is required for intellisens
-/* Todo:
-  - new walker per click, space
-  - continous mode with `c`
-  - histogramm with real bins (i.e. steps)
-*/
+
 
 let walker;
 let histo;
-let active = true
+let active = false;
+let startup = true;
 
 // coordinate system
 
@@ -43,25 +40,33 @@ function showText(){
   textSize(13);
   textAlign(LEFT)
   fill(150);
-  text("'c' - Löschen",20 ,360)
-  text("'p' - Pause",20 ,380)
+  text("'k' - kontinuierlich",20 ,340)
+  text("'l' - löschen",20 ,360)
+  text("mit Mauseklick hinzufügen",20 ,380)
+
+
+  
 }
 
 
 function draw() {
   //background(50);
-
+  
   walker.update();
   if (walker.drawn) {
     histo.getValue(walker.endY);
   }
   histo.show();
   showText();
+  if (startup){
+    noLoop();
+    startup = false;
+  }
 
 }
 
 function keyPressed() {
-  if (key === 'p') {
+  if (key === 'k') {
     if (active) {
       noLoop();
       active = false
@@ -70,7 +75,7 @@ function keyPressed() {
       active = true
     }
   } 
-  if (key === 'c') {
+  if (key === 'l') {
     walker.reset();
     histo.reset();
     draw();
