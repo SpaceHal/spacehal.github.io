@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 800" width="1500" height="800">
+<defs><filter id="sh" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-opacity="0.35"/></filter>
+<radialGradient id="hole" cx="62%" cy="68%" r="75%"><stop offset="0.35" stop-color="#ffffff"/><stop offset="0.75" stop-color="#b9b9b9"/><stop offset="1" stop-color="#5a5a5a"/></radialGradient>
+<linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f4f4"/><stop offset="1" stop-color="#b5b5b5"/></linearGradient>
+<radialGradient id="mg" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#f2f2f2"/><stop offset="1" stop-color="#c4c4c4"/></radialGradient>
+<style>
+.mono{font-family:"Courier New","DejaVu Sans Mono",monospace}
+.sans{font-family:"Avenir Next","Helvetica Neue","DejaVu Sans",Arial,sans-serif}
+.w{fill:none;stroke:#000;stroke-width:4;stroke-linejoin:miter}
+.lab{font-family:"Avenir Next","Helvetica Neue","DejaVu Sans",Arial,sans-serif;font-weight:700;font-size:36px}
+</style></defs>
+<rect width="1500" height="800" fill="#fff"/>
+<text class="sans" font-size="33" font-style="italic" fill="#555"><tspan x="14" y="44"><tspan font-weight="700" fill="#333">GND</tspan> wird mit dem <tspan font-weight="700" fill="#333">Minus-Pol</tspan> der</tspan><tspan x="14" y="86">Batterie und dem GND Pin am</tspan><tspan x="14" y="128"><tspan font-weight="700" fill="#333">Arduino</tspan> verbunden!</tspan></text>
+<rect x="516" y="140" width="448" height="576" rx="12" fill="#c9252c" stroke="#8e1419" stroke-width="3" filter="url(#sh)"/>
+<text class="mono" font-size="40" font-weight="700" fill="#fff" text-anchor="middle" transform="translate(762,428) rotate(-90)">DRV 8833</text>
+<circle cx="560" cy="190" r="17" fill="url(#ring)" stroke="#8a8a8a" stroke-width="2"/><circle cx="560" cy="190" r="9" fill="url(#hole)" stroke="#6a6a6a" stroke-width="1.5"/>
+<text class="lab" x="600" y="203" text-anchor="start" fill="#f3a3a3">NC</text>
+<circle cx="920" cy="190" r="17" fill="url(#ring)" stroke="#8a8a8a" stroke-width="2"/><circle cx="920" cy="190" r="9" fill="#111" stroke="#6a6a6a" stroke-width="1.5"/>
+<text class="lab" x="880" y="203" text-anchor="end" fill="#ffe24d">VM</text>
+<circle cx="560" cy="258" r="17" fill="url(#ring)" stroke="#8a8a8a" stroke-width="2"/><circle cx="560" cy="258" r="9" fill="#111" stroke="#6a6a6a" stroke-width="1.5"/>
+<text class="lab" x="600" y="271" text-anchor="start" fill="#ffffff">AIN2</text>
+<circle cx="920" cy="258" r="17" fill="url(#ring)" stroke="#8a8a8a" stroke-width="2"/><circle cx="920" cy="258" r="9" fill="url(#hole)" stroke="#6a6a6a" stroke-width="1.5"/>
+<text class="lab" x="880" y="271" text-anchor="end" fill="#f3a3a3">NC</text>
+<circle cx="560" cy="326" r="17" fill="url(#ring)" stroke="#8a8a8a" stroke-width="2"/><circle cx="560" cy="326" r="9" fill="#111" stroke="#6a6a6a" stroke-width="1.5"/>
+<text class="lab" x="600" y="339" text-anchor="start" fill="#ffffff">AIN1</text>
+<circle cx="920" cy="326" r="17" fill="url(#ring)" stroke="#8a8a8a" stroke-width="2"/><circle cx="920" cy="326" r="9" fill="#111" stroke="#6a6a6a" stroke-width="1.5"/>
+<text class="lab" x="880" y="339" text-anchor="end" fill="#ffffff">GND</text>
+<circle cx="560" cy="394" r="17" fill="url(#ring)" stroke="#8a8a8a" stroke-width="2"/><circle cx="560" cy="394" r="9" fill="#111" stroke="#6a6a6a" stroke-width="1.5"/>
+<text class="lab" x="600" y="407" text-anchor="start" fill="#ffffff">STBY</text>
+<circle cx="920" cy="394" r="17" fill="url(#ring)" stroke="#8a8a8a" stroke-width="2"/><circle cx="920" cy="394" r="9" fill="#111" stroke="#6a6a6a" stroke-width="1.5"/>
+<text class="lab" x="880" y="407" text-anchor="end" fill="#cfe0ff">AO1</text>
+<circle cx="560" cy="462" r="17" fill="url(#ring)" stroke="#8a8a8a" stroke-width="2"/><circle cx="560" cy="462" r="9" fill="url(#hole)" stroke="#6a6a6a" stroke-width="1.5"/>
+<text class="lab" x="600" y="475" text-anchor="start" fill="#ffffff">BIN1</text>
+<circle cx="920" cy="462" r="17" fill="url(#ring)" stroke="#8a8a8a" stroke-width="2"/><circle cx="920" cy="462" r="9" fill="#111" stroke="#6a6a6a" stroke-width="1.5"/>
+<text class="lab" x="880" y="475" text-anchor="end" fill="#cfe0ff">AO2</text>
+<circle cx="560" cy="530" r="17" fill="url(#ring)" stroke="#8a8a8a" stroke-width="2"/><circle cx="560" cy="530" r="9" fill="url(#hole)" stroke="#6a6a6a" stroke-width="1.5"/>
+<text class="lab" x="600" y="543" text-anchor="start" fill="#ffffff">BIN2</text>
+<circle cx="920" cy="530" r="17" fill="url(#ring)" stroke="#8a8a8a" stroke-width="2"/><circle cx="920" cy="530" r="9" fill="url(#hole)" stroke="#6a6a6a" stroke-width="1.5"/>
+<text class="lab" x="880" y="543" text-anchor="end" fill="#cfe0ff">BO2</text>
+<circle cx="560" cy="598" r="17" fill="url(#ring)" stroke="#8a8a8a" stroke-width="2"/><circle cx="560" cy="598" r="9" fill="url(#hole)" stroke="#6a6a6a" stroke-width="1.5"/>
+<text class="lab" x="600" y="611" text-anchor="start" fill="#f3a3a3">NC</text>
+<circle cx="920" cy="598" r="17" fill="url(#ring)" stroke="#8a8a8a" stroke-width="2"/><circle cx="920" cy="598" r="9" fill="url(#hole)" stroke="#6a6a6a" stroke-width="1.5"/>
+<text class="lab" x="880" y="611" text-anchor="end" fill="#cfe0ff">BO1</text>
+<circle cx="560" cy="666" r="17" fill="url(#ring)" stroke="#8a8a8a" stroke-width="2"/><circle cx="560" cy="666" r="9" fill="#111" stroke="#6a6a6a" stroke-width="1.5"/>
+<text class="lab" x="600" y="679" text-anchor="start" fill="#ffffff">GND</text>
+<circle cx="920" cy="666" r="17" fill="url(#ring)" stroke="#8a8a8a" stroke-width="2"/><circle cx="920" cy="666" r="9" fill="url(#hole)" stroke="#6a6a6a" stroke-width="1.5"/>
+<text class="lab" x="880" y="679" text-anchor="end" fill="#ffffff">GND</text>
+<rect x="16" y="222" width="322" height="278" fill="#ffb3b3" stroke="#000" stroke-width="3" stroke-dasharray="10 6"/>
+<text class="mono" stroke="#000" stroke-width="0.9" font-size="40" x="230" y="271" text-anchor="end">Pin 6</text>
+<text class="mono" stroke="#000" stroke-width="0.9" font-size="40" x="230" y="339" text-anchor="end">Pin 5</text>
+<text class="mono" stroke="#000" stroke-width="0.9" font-size="40" x="230" y="407" text-anchor="end">5V</text>
+<text class="mono" stroke="#000" stroke-width="0.9" font-size="40" x="230" y="475" text-anchor="end">GND</text>
+<text class="mono" stroke="#000" stroke-width="0.8" font-size="34" font-style="italic"><tspan x="16" y="548">Arduino</tspan><tspan x="16" y="590">PWM-Pins: 5, 6</tspan></text>
+<text class="sans" stroke="#333" stroke-width="0.6" font-size="27" font-style="italic" fill="#333"><tspan x="16" y="650">STBY an 5V:</tspan><tspan x="16" y="684">Treiber ist aktiv</tspan></text>
+<path class="w" d="M262 258H560"/>
+<path class="w" d="M262 326H560"/>
+<path class="w" d="M262 394H560"/>
+<path class="w" d="M262 462H440V666H560"/>
+<circle cx="262" cy="258" r="8" fill="#fff" stroke="#000" stroke-width="4"/>
+<circle cx="262" cy="326" r="8" fill="#fff" stroke="#000" stroke-width="4"/>
+<circle cx="262" cy="394" r="8" fill="#fff" stroke="#000" stroke-width="4"/>
+<circle cx="262" cy="462" r="8" fill="#fff" stroke="#000" stroke-width="4"/>
+<circle cx="560" cy="258" r="6" fill="#000"/>
+<circle cx="560" cy="326" r="6" fill="#000"/>
+<circle cx="560" cy="394" r="6" fill="#000"/>
+<circle cx="560" cy="666" r="6" fill="#000"/>
+<text class="mono" stroke="#000" stroke-width="0.9" font-size="40" x="1150" y="128">Batterie</text>
+<rect x="1150" y="148" width="334" height="220" fill="#eef01a" stroke="#000" stroke-width="3" stroke-dasharray="10 6"/>
+<text class="sans" stroke="#000" stroke-width="0.8" font-size="36" x="1238" y="271">2,7 - 10,8V</text>
+<path class="w" d="M920 190H1168"/><path class="w" d="M920 326H1168"/>
+<circle cx="1186" cy="190" r="18" fill="#fffbe0" stroke="#000" stroke-width="3"/><text class="sans" font-size="34" font-weight="700" x="1186" y="201" text-anchor="middle">+</text>
+<circle cx="1186" cy="326" r="18" fill="#fffbe0" stroke="#000" stroke-width="3"/><text class="sans" font-size="34" font-weight="700" x="1186" y="337" text-anchor="middle">−</text>
+<circle cx="1060" cy="326" r="6"/><path class="w" d="M1060 326V262M1022 262H1098"/><path class="w" stroke-width="3" d="M1036 252H1084M1048 242H1072"/>
+<text class="mono" font-size="34" x="1040" y="232" text-anchor="middle">GND</text>
+<path class="w" d="M920 394H1340V500"/><path class="w" d="M920 462H1070V740H1340V664"/>
+<rect x="1312" y="486" width="56" height="30" fill="#000"/><rect x="1312" y="648" width="56" height="30" fill="#000"/>
+<circle cx="1340" cy="582" r="76" fill="url(#mg)" stroke="#000" stroke-width="5"/><text class="sans" font-size="54" font-weight="700" x="1340" y="601" text-anchor="middle">M</text>
+<circle cx="920" cy="190" r="6" fill="#000"/>
+<circle cx="920" cy="326" r="6" fill="#000"/>
+<circle cx="920" cy="394" r="6" fill="#000"/>
+<circle cx="920" cy="462" r="6" fill="#000"/>
+</svg>
